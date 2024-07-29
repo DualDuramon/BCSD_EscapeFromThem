@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
 
     private void Walk()
     {
-        Vector3 walkVec = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        float getAxisX = Input.GetAxisRaw("Horizontal");
+        float getAxisY = Input.GetAxisRaw("Vertical");
+
+        Vector3 walkVec = new Vector3(getAxisX, 0, getAxisY);
         transform.Translate(walkVec.normalized * walkSpeed * Time.deltaTime);
     }
 }
