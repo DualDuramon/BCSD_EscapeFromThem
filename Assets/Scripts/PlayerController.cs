@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,9 +28,17 @@ public class PlayerController : MonoBehaviour
     private void Walk() //플레이어 이동 함수
     {
         float getAxisX = Input.GetAxisRaw("Horizontal");
-        float getAxisY = Input.GetAxisRaw("Vertical");
+        float getAxisZ = Input.GetAxisRaw("Vertical");
 
-        Vector3 walkVec = new Vector3(getAxisX, 0, getAxisY);
+
+        //Vector3 walkVec = new Vector3(getAxisX, 0, getAxisZ);
+        Vector3 tempVec = (transform.position - myCamera.transform.position);
+
+        Vector3 xVec = new Vector3(-tempVec.z, 0, tempVec.x);
+        Vector3 zVec = new Vector3(tempVec.x, 0, tempVec.z);
+
+        Vector3 walkVec = (-1) * xVec * getAxisX + zVec * getAxisZ;
+
         transform.Translate(walkVec.normalized * walkSpeed * Time.deltaTime);
     }
 
