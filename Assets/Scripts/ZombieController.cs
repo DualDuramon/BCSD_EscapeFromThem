@@ -57,8 +57,8 @@ public class ZombieController : MonoBehaviour
 
     private void TryAttack()
     {
-
-        if(nowAttackCoolTime < attackCoolTime)
+        Debug.DrawRay(transform.position, transform.forward * attackRange, Color.red);
+        if (nowAttackCoolTime < attackCoolTime)
         {
             nowAttackCoolTime += Time.deltaTime;
             return;
@@ -81,6 +81,8 @@ public class ZombieController : MonoBehaviour
             nowAttackCoolTime = 0.0f;
             isAttacking = true;
         }
+
+        //Physics.BoxCast()
     }
 
     private void AttackOff()
