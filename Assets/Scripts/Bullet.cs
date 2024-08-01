@@ -10,11 +10,16 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if(bulletLifeTime <= 0)
+        CheckLifeTime();
+        transform.position += transform.forward * bulletSpeed * Time.deltaTime;
+    }
+
+    private void CheckLifeTime()
+    {
+        if (bulletLifeTime <= 0)
         {
             Destroy(gameObject);
         }
         bulletLifeTime -= Time.deltaTime;
-        transform.position += transform.forward * bulletSpeed * Time.deltaTime;
     }
 }

@@ -14,6 +14,7 @@ public class ZombieController : MonoBehaviour
     //공격관련
     [SerializeField] private float attackDamage = 70.0f;
     [SerializeField] private float attackRange = 2.0f;
+    [SerializeField] private Vector3 attackBox = new Vector3(1, 1, 1);
     [SerializeField] private float attackCoolTime = 2.0f;
     [SerializeField] private float nowAttackCoolTime = 0.0f;
     [SerializeField] private bool isAttacking;
@@ -44,6 +45,11 @@ public class ZombieController : MonoBehaviour
         if (isDead) return;
 
         TryWalk();
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDead) return;
         TryAttack();
     }
 
@@ -58,6 +64,7 @@ public class ZombieController : MonoBehaviour
     private void TryAttack()
     {
         Debug.DrawRay(transform.position, transform.forward * attackRange, Color.red);
+        
         if (nowAttackCoolTime < attackCoolTime)
         {
             nowAttackCoolTime += Time.deltaTime;
@@ -71,6 +78,10 @@ public class ZombieController : MonoBehaviour
 
     private void Attack()
     {
+        if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange)
+            transform.LookAt(playerTransform.position);
+        else return;
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitInfo;
 
@@ -81,8 +92,6 @@ public class ZombieController : MonoBehaviour
             nowAttackCoolTime = 0.0f;
             isAttacking = true;
         }
-
-        //Physics.BoxCast()
     }
 
     private void AttackOff()
