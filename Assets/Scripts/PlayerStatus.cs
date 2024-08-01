@@ -35,8 +35,14 @@ public class PlayerStatus : MonoBehaviour
 
         if(nowHp <= 0)
         {
-            isDead = true;
+            Dead();
         }
+    }
+    
+    public void Dead()  //사망 시 스테이터스 처리 함수
+    {
+        isDead = true;
+        transform.GetComponent<PlayerController>().Dead();  //플레이어 사망 처리
     }
 
     public bool CanFire()   //사격 가능 여부 체크 함수

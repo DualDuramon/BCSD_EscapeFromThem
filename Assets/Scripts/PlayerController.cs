@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerModel;    //플레이어 모델오브젝트
     [SerializeField] private Transform bulletPos;       //총알 발사 위치
     [SerializeField] private GameObject BulletPrefab;   //총알 프리펩
+
     private Animator myAnim;                            //애니메이터
     private Rigidbody myRigid;                          //리지드바디
+    private Collider myCol;                             //콜라이더
     private PlayerStatus myStatus;                      //플레이어 스테이터스
     private Camera myCamera;                            //카메라
 
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         myCamera = GetComponentInChildren<Camera>();
         myRigid = GetComponent<Rigidbody>();
+        myCol = GetComponent<Collider>();
         myStatus = GetComponent<PlayerStatus>();
         myAnim = GetComponentInChildren<Animator>();
     }
@@ -127,6 +130,11 @@ public class PlayerController : MonoBehaviour
         myAnim.SetInteger("Status_stg44", 2);
         myStatus.isReloading = false;
         Debug.Log("재장전 완료");
+    }
+
+    public void Dead()
+    {
+        myCol.enabled = false;
     }
 
 
