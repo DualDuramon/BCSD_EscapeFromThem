@@ -10,11 +10,25 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if(bulletLifeTime <= 0)
+        Destroy(gameObject, bulletLifeTime);
+        transform.position += transform.forward * bulletSpeed * Time.deltaTime;
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Monster"))
         {
+            other.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
             Destroy(gameObject);
         }
-        bulletLifeTime -= Time.deltaTime;
-        transform.position += transform.forward * bulletSpeed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            collision.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
+            Destroy(gameObject);
+        }
     }
 }
