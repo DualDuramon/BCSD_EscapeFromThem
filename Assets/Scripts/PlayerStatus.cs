@@ -39,12 +39,12 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public bool CanFire()
+    public bool CanFire()   //사격 가능 여부 체크 함수
     {
         return nowGunCoolTime >= maxGunCoolTime && nowBullet_mag > 0;
     }
 
-    public void Decrease_bullet()
+    public void Decrease_bullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
         if (nowBullet_mag < 0) return;
 
@@ -52,12 +52,14 @@ public class PlayerStatus : MonoBehaviour
         nowBullet_mag--;
     }
 
-    public bool CanReloading()
+    public bool CanReloading()  //재장전 가능 여부 체크 함수
     {
-        return !isReloading && nowBullet_reserve > 0;
+        return !isReloading &&
+            nowBullet_reserve > 0 &&
+            nowBullet_mag != maxBullet_mag;
     }
 
-    public void Calculate_Bullet_Reload()       //총알 계산 및 리로딩
+    public void Calculate_Bullet_Reload()       //재장전 시 총알 계산 함수
     {        
         if(nowBullet_reserve < maxBullet_mag)
         {

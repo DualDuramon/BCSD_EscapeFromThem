@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerModel;    //플레이어 모델오브젝트
     [SerializeField] private Transform bulletPos;       //총알 발사 위치
     [SerializeField] private GameObject BulletPrefab;   //총알 프리펩
+    private Animator myAnim;                            //애니메이터
     private Rigidbody myRigid;                          //리지드바디
     private PlayerStatus myStatus;                      //플레이어 스테이터스
     private Camera myCamera;                            //카메라
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
         myCamera = GetComponentInChildren<Camera>();
         myRigid = GetComponent<Rigidbody>();
         myStatus = GetComponent<PlayerStatus>();
+        myAnim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -26,12 +28,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //if (myStatus.isDead) return;
-
-        TryWalk();
-        LookMouseCursor();
-        TryGunFire();
-        TryReload_Mag();
+        if (!myStatus.isDead) {
+            TryWalk();
+            LookMouseCursor();
+            TryGunFire();
+            TryReload_Mag();
+        }
     }
 
     private void TryWalk()      //플레이어 이동 시도 함수
@@ -45,8 +47,13 @@ public class PlayerController : MonoBehaviour
         float getAxisZ = Input.GetAxisRaw("Vertical");
 
         if(getAxisX == 0 && getAxisZ == 0) {
+            myAnim.SetInteger("Status_walk", 0);
             return;
         }
+        else
+        {
+            myAnim.SetInteger("Status_walk", 1);
+        } 
 
         Vector3 tempVec = (transform.position - myCamera.transform.position);
 
@@ -66,7 +73,17 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayHit))
         {
-            Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+            Vector3 mouseDir;
+
+            if (rayHit.transform.tag == "Monster")
+            {
+                mouseDir = rayHit.transform.position - transform.position;
+            }
+            else
+            {
+                mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+            }
+
             playerModel.transform.forward = mouseDir.normalized;
         }
 
@@ -85,7 +102,6 @@ public class PlayerController : MonoBehaviour
         myStatus.Decrease_bullet();
         Instantiate(BulletPrefab, bulletPos.position, bulletPos.rotation);
 
-        //Debug.Log("총알 발사");
     }
 
     private void TryReload_Mag()    //재장전 시도 함수
@@ -101,12 +117,17 @@ public class PlayerController : MonoBehaviour
         myStatus.isReloading = true;
         myStatus.nowBullet_reserve += myStatus.nowBullet_mag;     //전체 총알 합산 과정
         myStatus.nowBullet_mag = 0;
+        myAnim.SetFloat("ReloadSpeed", 0.5f / myStatus.reloadingTime);
+        myAnim.SetInteger("Status_stg44", 3);
         Debug.Log("재장전 시작");
         
         yield return new WaitForSeconds(myStatus.reloadingTime);
 
         myStatus.Calculate_Bullet_Reload();
+        myAnim.SetInteger("Status_stg44", 2);
         myStatus.isReloading = false;
         Debug.Log("재장전 완료");
     }
+
+
 }

@@ -93,6 +93,7 @@ public class ZombieController : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, attackRange, playerMask))
         {
             Debug.Log("플레이어 공격");
+            hitInfo.transform.GetComponent<PlayerStatus>().DecreaseHp(attackDamage);
             myAnim.SetTrigger("Attack");
             nowAttackCoolTime = 0.0f;
             isAttacking = true;
