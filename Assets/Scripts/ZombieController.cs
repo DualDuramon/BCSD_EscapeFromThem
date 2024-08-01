@@ -14,7 +14,6 @@ public class ZombieController : MonoBehaviour
     //공격관련
     [SerializeField] private float attackDamage = 70.0f;
     [SerializeField] private float attackRange = 2.0f;
-    [SerializeField] private Vector3 attackBox = new Vector3(1, 1, 1);
     [SerializeField] private float attackCoolTime = 2.0f;
     [SerializeField] private float nowAttackCoolTime = 0.0f;
     [SerializeField] private bool isAttacking;
@@ -27,33 +26,39 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     private NavMeshAgent myNavAgent;
 
-    //Animator 관련
+    //그외
     private Animator myAnim;
+    private Collider myCollider;
 
     private void Awake()
     {
+        //컴포넌트 불러오기
+        myNavAgent = GetComponent<NavMeshAgent>();
+        myAnim = GetComponent<Animator>();
+        myCollider = GetComponent<Collider>();
+
+        ResetProperties();
+    }
+
+    private void ResetProperties()  //컴포넌트 프로퍼티 초기화 함수
+    {
         nowHp = maxHp;
         isDead = false;
-        //playerTransform = FindAnyObjectByType<PlayerController>().transform;
-        myNavAgent = GetComponent<NavMeshAgent>();
+        myAnim.SetBool("isDead", false);
+        myCollider.enabled = true;
         myNavAgent.speed = walkSpeed;
-        myAnim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (isDead) return;
-
-        TryWalk();
+        if (!isDead)
+        {
+            TryAttack();
+            TryWalk();
+        }
     }
 
-    private void FixedUpdate()
-    {
-        if (isDead) return;
-        TryAttack();
-    }
-
-    private void TryWalk()
+    private void TryWalk()  //걷기 함수
     {
         if (!isAttacking)
         {
@@ -61,7 +66,7 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    private void TryAttack()
+    private void TryAttack()    //공격 시도 함수
     {
         Debug.DrawRay(transform.position, transform.forward * attackRange, Color.red);
         
@@ -76,7 +81,7 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    private void Attack()
+    private void Attack()   //공격 함수
     {
         if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange)
             transform.LookAt(playerTransform.position);
@@ -94,7 +99,28 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    private void AttackOff()
+    public void DecreaseHp(float amount)
+    {
+        if (isDead) return;
+
+        nowHp -= amount;
+        if (nowHp <= 0)
+        {
+            Dead();
+        }
+    }
+
+    public void Dead()  //사망 처리 함수
+    {
+        isDead = true;
+        myNavAgent.ResetPath();
+        myNavAgent.enabled = false;
+        myCollider.enabled = false;
+        myAnim.SetBool("isDead", true);
+        Destroy(gameObject, 5.0f);      //2초 후 시체 삭제.
+    }
+
+    private void AttackOff()    //공격 끝나면 공격 풀게함. 애니메이션에서 이벤트 호출
     {
         isAttacking = false;
     }
