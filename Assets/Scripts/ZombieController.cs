@@ -119,7 +119,7 @@ public class ZombieController : MonoBehaviour
         myAnim.SetBool("isWalk", false);
         myNavAgent.enabled = false;
         myCollider.enabled = false;
-        Destroy(gameObject, 5.0f);      //2초 후 시체 삭제.
+        Destroy(gameObject, 5.0f);      //5초 후 시체 삭제.
     }
 
     private void AttackOff()    //공격 끝나면 공격 풀게함. 애니메이션에서 이벤트 호출
