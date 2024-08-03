@@ -36,7 +36,6 @@ public class ZombieController : MonoBehaviour
         myNavAgent = GetComponent<NavMeshAgent>();
         myAnim = GetComponent<Animator>();
         myCollider = GetComponent<Collider>();
-
         ResetProperties();
     }
 
@@ -63,6 +62,7 @@ public class ZombieController : MonoBehaviour
         if (!isAttacking)
         {
             myNavAgent.SetDestination(playerTransform.position);
+            myAnim.SetBool("isWalk", true);
         }
     }
 
@@ -93,6 +93,7 @@ public class ZombieController : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, attackRange, playerMask))
         {
             Debug.Log("플레이어 공격");
+            hitInfo.transform.GetComponent<PlayerStatus>().DecreaseHp(attackDamage);
             myAnim.SetTrigger("Attack");
             nowAttackCoolTime = 0.0f;
             isAttacking = true;
@@ -114,9 +115,10 @@ public class ZombieController : MonoBehaviour
     {
         isDead = true;
         myNavAgent.ResetPath();
+        myAnim.SetBool("isDead", true);
+        myAnim.SetBool("isWalk", false);
         myNavAgent.enabled = false;
         myCollider.enabled = false;
-        myAnim.SetBool("isDead", true);
         Destroy(gameObject, 5.0f);      //2초 후 시체 삭제.
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public float walkSpeed = 4.0f;    //이동속도
+    public float walkSpeed = 10.0f;    //이동속도
     public float nowHp = 150.0f;    //현재 체력
     public float maxHp = 150.0f;    //최대 체력
     public bool isDead = false;     //죽음 여부
@@ -29,22 +29,39 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public void ResetStatus()
+    {
+        //walkSpeed = 4.0f;
+        nowHp = 150.0f;
+        isDead = false;
+        isReloading = false;
+        nowGunCoolTime = 0.0f;
+        nowBullet_mag = 30;
+        nowBullet_mag = 90;
+    }
+
     public void DecreaseHp(float amount)  //체력 감소 함수
     {
         nowHp -= amount;
 
         if(nowHp <= 0)
         {
-            isDead = true;
+            Dead();
         }
     }
+    
+    public void Dead()  //사망 시 스테이터스 처리 함수
+    {
+        isDead = true;
+        transform.GetComponent<PlayerController>().Dead();  //플레이어 사망 처리
+    }
 
-    public bool CanFire()
+    public bool CanFire()   //사격 가능 여부 체크 함수
     {
         return nowGunCoolTime >= maxGunCoolTime && nowBullet_mag > 0;
     }
 
-    public void Decrease_bullet()
+    public void Decrease_bullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
         if (nowBullet_mag < 0) return;
 
@@ -52,12 +69,14 @@ public class PlayerStatus : MonoBehaviour
         nowBullet_mag--;
     }
 
-    public bool CanReloading()
+    public bool CanReloading()  //재장전 가능 여부 체크 함수
     {
-        return !isReloading && nowBullet_reserve > 0;
+        return !isReloading &&
+            nowBullet_reserve > 0 &&
+            nowBullet_mag != maxBullet_mag;
     }
 
-    public void Calculate_Bullet_Reload()       //총알 계산 및 리로딩
+    public void Calculate_Bullet_Reload()       //재장전 시 총알 계산 함수
     {        
         if(nowBullet_reserve < maxBullet_mag)
         {
