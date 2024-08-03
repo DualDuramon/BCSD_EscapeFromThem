@@ -23,18 +23,23 @@ public class Item_Grenade : MonoBehaviour
 
     private void Explode()  //수류탄 폭발 함수
     {
-        RaycastHit[] raycasts = Physics.SphereCastAll(transform.position, explodeRange, Vector3.up, 0.0f, LayerMask.GetMask("Creature"));
-        
-        for (int i = 0; i < raycasts.Length; i++)
+        RaycastHit[] raycasts 
+            = Physics.SphereCastAll(transform.position, explodeRange, Vector3.up, 0.0f, LayerMask.GetMask("Creature"));
+
+        foreach (RaycastHit hitData in raycasts)
         {
-            Debug.Log("수류탄 감지 : " + raycasts[i].transform.name);
-            switch (raycasts[i].transform.tag)
+            RaycastHit obstCast;
+            Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast);
+            if (obstCast.transform.tag != hitData.transform.tag) continue;
+
+            Debug.Log("수류탄 감지 : " + hitData.transform.name);
+            switch (hitData.transform.tag)
             {
                 case "Player":
-                    raycasts[i].transform.GetComponent<PlayerStatus>().DecreaseHp(Damage);
+                    hitData.transform.GetComponent<PlayerStatus>().DecreaseHp(Damage);
                     break;
                 case "Zombie":
-                    raycasts[i].transform.GetComponent<ZombieController>().DecreaseHp(Damage);
+                    hitData.transform.GetComponent<ZombieController>().DecreaseHp(Damage);
                     break;
             }
         }
