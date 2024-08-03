@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Monster"))
+        if (other.gameObject.CompareTag("Zombie"))
         {
             other.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
             Destroy(gameObject);
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Zombie"))
         {
             collision.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
             Destroy(gameObject);

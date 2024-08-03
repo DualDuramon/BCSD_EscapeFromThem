@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
     public float walkSpeed = 10.0f;    //이동속도
-    public float nowHp = 150.0f;    //현재 체력
-    public float maxHp = 150.0f;    //최대 체력
+    [SerializeField] private float nowHp = 150.0f;    //현재 체력
+    [SerializeField] private float maxHp = 150.0f;    //최대 체력
     public bool isDead = false;     //죽음 여부
 
-    //총 관련
+    //총기 공격 관련
     public bool isReloading = false;
     public float nowGunCoolTime = 0.0f;
     public float maxGunCoolTime = 0.3f;
@@ -20,6 +21,11 @@ public class PlayerStatus : MonoBehaviour
     public int nowBullet_mag = 30;
     public int maxBullet_mag = 30;
     public int nowBullet_reserve = 90;
+
+    //아이템 관련
+    public int nowGrenade = 1;      //현재 보유 수류탄
+    public int maxGrenade = 3;      //최대 수류탄 개수
+    public float throwPower = 5.0f;    //수류탄 던지기 힘
 
     private void Update()
     {
@@ -32,12 +38,13 @@ public class PlayerStatus : MonoBehaviour
     public void ResetStatus()
     {
         //walkSpeed = 4.0f;
-        nowHp = 150.0f;
+        nowHp = maxHp;
         isDead = false;
         isReloading = false;
         nowGunCoolTime = 0.0f;
-        nowBullet_mag = 30;
-        nowBullet_mag = 90;
+        nowBullet_mag = maxBullet_mag;
+        nowGrenade = 1;
+        throwPower = 5.0f;
     }
 
     public void DecreaseHp(float amount)  //체력 감소 함수
@@ -49,7 +56,7 @@ public class PlayerStatus : MonoBehaviour
             Dead();
         }
     }
-    
+
     public void Dead()  //사망 시 스테이터스 처리 함수
     {
         isDead = true;
@@ -63,12 +70,20 @@ public class PlayerStatus : MonoBehaviour
 
     public void Decrease_bullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
-        if (nowBullet_mag < 0) return;
-
-        nowGunCoolTime = 0.0f;
+        //if (nowBullet_mag < 0) return;
         nowBullet_mag--;
     }
 
+    public bool CanThrowGrenade()   //수류탄 투척 가능 여부 체크 함수
+    {
+        return nowGrenade > 0 && nowGunCoolTime >= maxGunCoolTime;
+    }
+
+    public void DecreaseGrenade()
+    {
+        nowGrenade--;
+    }
+    
     public bool CanReloading()  //재장전 가능 여부 체크 함수
     {
         return !isReloading &&
