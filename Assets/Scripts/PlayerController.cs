@@ -24,6 +24,14 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
     }
 
+    private void ResetStatus()
+    {
+        myAnim.SetInteger("Status_stg44", 2);
+        myAnim.SetInteger("Status_walk", 0);
+        myCol.enabled = true;
+        myStatus.ResetStatus();
+    }
+
     private void Start()
     {
 
@@ -132,10 +140,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log("재장전 완료");
     }
 
-    public void Dead()
+    public void Dead()  //죽음 처리 함수
     {
         myCol.enabled = false;
+        myAnim.SetInteger("Status_stg44", 4);
+        myAnim.SetInteger("Status_walk", 0);
+        //Invoke("ResetStatus", 3.0f);
     }
-
-
 }

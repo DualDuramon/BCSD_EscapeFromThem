@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public float walkSpeed = 4.0f;    //이동속도
+    public float walkSpeed = 10.0f;    //이동속도
     public float nowHp = 150.0f;    //현재 체력
     public float maxHp = 150.0f;    //최대 체력
     public bool isDead = false;     //죽음 여부
@@ -27,6 +27,17 @@ public class PlayerStatus : MonoBehaviour
         {
             nowGunCoolTime += Time.deltaTime;
         }
+    }
+
+    public void ResetStatus()
+    {
+        //walkSpeed = 4.0f;
+        nowHp = 150.0f;
+        isDead = false;
+        isReloading = false;
+        nowGunCoolTime = 0.0f;
+        nowBullet_mag = 30;
+        nowBullet_mag = 90;
     }
 
     public void DecreaseHp(float amount)  //체력 감소 함수
