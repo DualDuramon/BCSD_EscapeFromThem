@@ -19,8 +19,8 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Zombie"))
         {
             other.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Zombie"))
         {
             collision.gameObject.GetComponent<ZombieController>().DecreaseHp(bulletDamage);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }
