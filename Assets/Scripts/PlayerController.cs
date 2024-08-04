@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,7 +8,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject playerModel;    //플레이어 모델오브젝트
     [SerializeField] private Transform bulletPos;       //총알 발사 위치
-    [SerializeField] private GameObject BulletPrefab;   //총알 프리펩
+    [SerializeField] private GameObject bulletPrefab;   //총알 프리펩
+    [SerializeField] private GameObject grenadePrefab;  //수류탄 프리펩
+    [SerializeField] private Transform grenadePos;      //수류탄 발사 위치
 
     private Animator myAnim;                            //애니메이터
     private Rigidbody myRigid;                          //리지드바디
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
             LookMouseCursor();
             TryGunFire();
             TryReload_Mag();
+            TryThrowGrenade();
         }
     }
 
@@ -79,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
     private void LookMouseCursor()  //플레이어의 마우스 향하기 함수
     {
+        /*
         Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
 
@@ -86,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 mouseDir;
 
-            if (rayHit.transform.tag == "Monster")
+            if (rayHit.transform.tag == "Zombie")
             {
                 mouseDir = rayHit.transform.position - transform.position;
             }
@@ -97,7 +102,29 @@ public class PlayerController : MonoBehaviour
 
             playerModel.transform.forward = mouseDir.normalized;
         }
+        */
+        playerModel.transform.forward = GetMouseCursorPos().normalized;
+    }
 
+    private Vector3 GetMouseCursorPos() //필드상에서의 마우스 좌표 반환 함수
+    {
+        Vector3 mouseDir = new Vector3(0, 0, 0);
+        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(ray, out rayHit))
+        {
+            if (rayHit.transform.tag == "Zombie")
+            {
+                mouseDir = rayHit.transform.position - transform.position;
+            }
+            else
+            {
+                mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+            }
+        }
+
+        return mouseDir;
     }
 
     private void TryGunFire()  //플레이어의 발사 함수
@@ -111,8 +138,24 @@ public class PlayerController : MonoBehaviour
     private void GunFire()  //사격 함수
     {
         myStatus.Decrease_bullet();
-        Instantiate(BulletPrefab, bulletPos.position, bulletPos.rotation);
+        Instantiate(bulletPrefab, bulletPos.position, bulletPos.rotation);
+        myStatus.nowGunCoolTime = 0.0f;
+    }
 
+    private void TryThrowGrenade()  //수류탄 투척 시도 함수
+    {
+        if (Input.GetButtonDown("Fire2") && myStatus.CanThrowGrenade())
+        {
+            ThrowGrenade();
+        }
+    }
+
+    private void ThrowGrenade() //수류탄 투척 시도 함수
+    {
+        GameObject grenade = Instantiate(grenadePrefab, grenadePos.position, Quaternion.identity);
+        grenade.transform.GetComponent<Rigidbody>().AddForce(grenadePos.forward.normalized * myStatus.throwPower, ForceMode.Impulse);
+        myStatus.DecreaseGrenade();
+        myStatus.nowGunCoolTime = 0.0f;
     }
 
     private void TryReload_Mag()    //재장전 시도 함수
