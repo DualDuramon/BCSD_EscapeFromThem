@@ -8,7 +8,7 @@ public class ZombieController : MonoBehaviour
     //체력 관련
     [SerializeField] private float nowHp;
     [SerializeField] private float maxHp = 100.0f;
-    private bool isDead;
+    [SerializeField] private bool isDead;
     
 
     //공격관련

@@ -183,6 +183,9 @@ MonoBehaviour:
   Damage: 120
   explodeRange: 2.2
   explodeParticle: {fileID: 787463116977425366, guid: ae5117c5f7fa85049ab17a7302b3c666, type: 3}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!1 &6708784983827199037
 GameObject:
   m_ObjectHideFlags: 0

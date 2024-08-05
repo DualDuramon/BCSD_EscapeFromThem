@@ -8,8 +8,9 @@ public class Item_Grenade : MonoBehaviour
     [SerializeField] private float Damage = 100.0f;              //폭발 데미지
     [SerializeField] private float explodeRange = 2.0f;         //폭발 반경
     [SerializeField] private ParticleSystem explodeParticle;    //폭발 파티클
- 
-    
+    [SerializeField] private LayerMask targetMask;              //폭발 피격 대상 레이어
+
+
     private void Start()
     {
 
@@ -24,7 +25,7 @@ public class Item_Grenade : MonoBehaviour
     private void Explode()  //수류탄 폭발 함수
     {
         RaycastHit[] raycasts 
-            = Physics.SphereCastAll(transform.position, explodeRange, Vector3.up, 0.0f, LayerMask.GetMask("Creature"));
+            = Physics.SphereCastAll(transform.position, explodeRange, Vector3.up, 0.0f, targetMask);
 
         foreach (RaycastHit hitData in raycasts)
         {
