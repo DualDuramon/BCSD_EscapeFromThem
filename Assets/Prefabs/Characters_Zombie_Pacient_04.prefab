@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowHp: 100
   maxHp: 100
+  isDead: 0
   attackDamage: 70
   attackRange: 1.5
   attackCoolTime: 2
