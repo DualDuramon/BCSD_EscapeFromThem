@@ -6,12 +6,16 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject playerModel;    //플레이어 모델오브젝트
-    [SerializeField] private Transform bulletPos;       //총알 발사 위치
-    [SerializeField] private GameObject bulletPrefab;   //총알 프리펩
-    [SerializeField] private GameObject grenadePrefab;  //수류탄 프리펩
-    [SerializeField] private Transform grenadePos;      //수류탄 발사 위치
+    [SerializeField] private GameObject playerModel;        //플레이어 모델오브젝트
+    
+    [SerializeField] private Transform bulletPos;           //총알 발사 위치
+    [SerializeField] private GameObject bulletPrefab;       //총알 프리펩
+    [SerializeField] private ParticleSystem muzzleFlash;    //총구섬광 파티클
 
+    [SerializeField] private GameObject grenadePrefab;      //수류탄 프리펩
+    [SerializeField] private Transform grenadePos;          //수류탄 발사 위치
+
+    //컴포넌트들
     private Animator myAnim;                            //애니메이터
     private Rigidbody myRigid;                          //리지드바디
     private Collider myCol;                             //콜라이더
@@ -51,6 +55,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void TryWalk()      //플레이어 이동 시도 함수
     {
         Walk();
@@ -83,26 +92,6 @@ public class PlayerController : MonoBehaviour
 
     private void LookMouseCursor()  //플레이어의 마우스 향하기 함수
     {
-        /*
-        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit rayHit;
-
-        if (Physics.Raycast(ray, out rayHit))
-        {
-            Vector3 mouseDir;
-
-            if (rayHit.transform.tag == "Zombie")
-            {
-                mouseDir = rayHit.transform.position - transform.position;
-            }
-            else
-            {
-                mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
-            }
-
-            playerModel.transform.forward = mouseDir.normalized;
-        }
-        */
         playerModel.transform.forward = GetMouseCursorPos().normalized;
     }
 
@@ -131,6 +120,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && myStatus.CanFire())
         {
+            muzzleFlash.Play();
             GunFire();
         }
     }   
