@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &71762285
+--- !u!1001 &16203709
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.273
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.585526
+      value: 51.41
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -172,11 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (5)
+      value: Characters_Zombie_Pacient_04 (13)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
@@ -187,7 +187,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
---- !u!1001 &230383440
+--- !u!1001 &177603811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -197,15 +197,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: 21.26
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.1
+      value: 25.09
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -237,26 +237,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (9)
+      value: Characters_Zombie_Pacient_04 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
---- !u!1001 &268969819
+--- !u!1001 &241697632
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -266,15 +262,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.813
+      value: 46.339996
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.314474
+      value: 46.71
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -306,26 +302,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Characters_Zombie_Pacient_04 (15)
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
---- !u!1001 &342147070
+--- !u!1001 &359521752
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -335,15 +323,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.873001
+      value: 47.899998
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.314474
+      value: 47.7
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -375,20 +363,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (4)
+      value: Characters_Zombie_Pacient_04 (19)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -668,7 +652,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &416501309
+--- !u!1001 &426962813
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -678,15 +662,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.560001
+      value: -1.6099987
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.1
+      value: 36.03
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -718,20 +702,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (7)
+      value: Characters_Zombie_Pacient_04 (6)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -912,7 +892,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 7.3202305, z: 121.43434}
   m_Center: {x: 0, y: 3.1601086, z: 30.100908}
---- !u!1001 &571671971
+--- !u!1001 &540400313
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -922,15 +902,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -0.3599987
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.585526
+      value: 33.809998
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -962,20 +942,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Characters_Zombie_Pacient_04 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1054,7 +1026,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &997517840
+--- !u!1001 &742676292
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1064,15 +1036,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.813
+      value: -6.84
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.8
+      value: 46.31
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1104,20 +1076,207 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (1)
+      value: Characters_Zombie_Pacient_04 (14)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &800282143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &928763847
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &1022936816
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1316,7 +1475,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &1310219150
+--- !u!1001 &1374705108
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1326,15 +1485,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.873001
+      value: 44.619995
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.8
+      value: 45.55
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1366,20 +1525,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (2)
+      value: Characters_Zombie_Pacient_04 (16)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &1378265887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1999989
       objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 35.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1420,7 +1640,7 @@ Transform:
   - {fileID: 376168716}
   m_Father: {fileID: 1524292161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1406244248
+--- !u!1001 &1381055896
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1430,15 +1650,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.560001
+      value: 43.5
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.585526
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1470,20 +1690,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_Name
-      value: Characters_Zombie_Pacient_04 (6)
+      value: Characters_Zombie_Pacient_04 (17)
       objectReference: {fileID: 0}
     - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: playerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1542,11 +1758,206 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 7.3202305, z: 121.43434}
   m_Center: {x: 0, y: 3.1601086, z: 30.100908}
+--- !u!1001 &1471992694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.089996
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 48.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
 --- !u!4 &1524292161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1329278679194880146, guid: acb560e6e30cd8944af6972998656989, type: 3}
   m_PrefabInstance: {fileID: 1137520813863669910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1545715425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &1575330813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
 --- !u!1 &1592900665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +2045,136 @@ Transform:
   - {fileID: 437244577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1665627621
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+--- !u!1001 &1735262959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.649998
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
 --- !u!1 &1838868176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +2432,71 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1001 &2135072164
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567065408449992813, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_Name
+      value: Characters_Zombie_Pacient_04 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 372970342}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
 --- !u!1001 &1137520813863669910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2227,26 +2833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Characters_Zombie_Pacient_04
       objectReference: {fileID: 0}
-    - target: {fileID: 906717007932719831, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1222238567520302940, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 372970342}
-    - target: {fileID: 1421676161158950329, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1421676161158950329, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1421676161158950329, guid: 82232ec55af133b4e8f2c6df2f4ecd36, type: 3}
-      propertyPath: m_UpdateWhenOffscreen
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2400,15 +2990,25 @@ SceneRoots:
   - {fileID: 1662687168}
   - {fileID: 9088803156362464134}
   - {fileID: 2691923768422863395}
-  - {fileID: 71762285}
-  - {fileID: 997517840}
-  - {fileID: 1406244248}
-  - {fileID: 268969819}
-  - {fileID: 416501309}
-  - {fileID: 1310219150}
-  - {fileID: 571671971}
-  - {fileID: 342147070}
-  - {fileID: 230383440}
+  - {fileID: 540400313}
+  - {fileID: 928763847}
+  - {fileID: 241697632}
+  - {fileID: 1575330813}
+  - {fileID: 1735262959}
+  - {fileID: 16203709}
+  - {fileID: 1374705108}
+  - {fileID: 177603811}
+  - {fileID: 1378265887}
+  - {fileID: 1545715425}
+  - {fileID: 1381055896}
+  - {fileID: 1665627621}
+  - {fileID: 426962813}
+  - {fileID: 742676292}
+  - {fileID: 1471992694}
+  - {fileID: 1022936816}
+  - {fileID: 800282143}
+  - {fileID: 359521752}
+  - {fileID: 2135072164}
   - {fileID: 1137520813863669910}
   - {fileID: 673752250}
   - {fileID: 1838868178}

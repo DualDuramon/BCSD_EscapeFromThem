@@ -26,9 +26,9 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     private NavMeshAgent myNavAgent;
 
-    //메시 돌출 관련
-    [SerializeField] private float visibleDistance = 5.0f;
-    [SerializeField] private float visibleDotValue = 5.0f;
+    //메시 그리기 여부 관련
+    [SerializeField] private float visibleDistance = 5.0f;      //메시 그려지는 최소 거리
+    [SerializeField] private float visibleDotValue = -0.766f;   //cos(-140도) = -0.766f
     private SkinnedMeshRenderer meshRenderer;
     
 
@@ -61,7 +61,6 @@ public class ZombieController : MonoBehaviour
         if (!isDead)
         {
             TryAttack();
-            TryWalk();
         }
     }
     
@@ -69,6 +68,7 @@ public class ZombieController : MonoBehaviour
     {
         if(!isDead)
         {
+            TryWalk();
             HideMyMesh();
         }
     }
@@ -145,7 +145,9 @@ public class ZombieController : MonoBehaviour
 
     private void HideMyMesh() //좀비 메시 숨기기,밝히기 함수
     {
-        float dotValue = Vector3.Dot(playerTransform.forward, playerTransform.position - transform.position);
+        float dotValue 
+            = Vector3.Dot(playerTransform.forward.normalized, 
+            (playerTransform.position - transform.position).normalized);
         float distance = Vector3.Distance(playerTransform.position, transform.position);
         //Debug.Log(dotValue);
         if (dotValue < visibleDotValue || distance < visibleDistance)
