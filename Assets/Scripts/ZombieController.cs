@@ -26,6 +26,12 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     private NavMeshAgent myNavAgent;
 
+    //메시 돌출 관련
+    [SerializeField] private float visibleDistance = 5.0f;
+    [SerializeField] private float visibleDotValue = 5.0f;
+    private SkinnedMeshRenderer meshRenderer;
+    
+
     //그외
     private Animator myAnim;
     private Collider myCollider;
@@ -36,6 +42,8 @@ public class ZombieController : MonoBehaviour
         myNavAgent = GetComponent<NavMeshAgent>();
         myAnim = GetComponent<Animator>();
         myCollider = GetComponent<Collider>();
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        playerTransform = GameObject.Find("PlayerBody").transform;
         ResetProperties();
     }
 
@@ -54,6 +62,14 @@ public class ZombieController : MonoBehaviour
         {
             TryAttack();
             TryWalk();
+        }
+    }
+    
+    private void FixedUpdate()
+    {
+        if(!isDead)
+        {
+            HideMyMesh();
         }
     }
 
@@ -125,5 +141,20 @@ public class ZombieController : MonoBehaviour
     private void AttackOff()    //공격 끝나면 공격 풀게함. 애니메이션에서 이벤트 호출
     {
         isAttacking = false;
+    }
+
+    private void HideMyMesh() //좀비 메시 숨기기,밝히기 함수
+    {
+        float dotValue = Vector3.Dot(playerTransform.forward, playerTransform.position - transform.position);
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
+        //Debug.Log(dotValue);
+        if (dotValue < visibleDotValue || distance < visibleDistance)
+        {
+            meshRenderer.enabled = true;
+        }
+        else
+        {
+            meshRenderer.enabled = false;
+        }
     }
 }
