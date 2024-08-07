@@ -8,6 +8,8 @@ TagManager:
   - wehrmacht_b
   - Zombie
   - Barricade
+  - EscapeZone
+  - ZombieSpawn
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Creature
   - Ground
   - CityObstacle
-  - 
+  - Point
   - 
   - 
   - 

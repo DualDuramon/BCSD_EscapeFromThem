@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5303658724085024864}
   - component: {fileID: 5664604300327927945}
   - component: {fileID: 5782250545521115667}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Point_Flase_B
   m_TagString: Barricade
   m_Icon: {fileID: 0}
