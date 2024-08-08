@@ -60,6 +60,7 @@ public class ZombieController : MonoBehaviour
     {
         if (!isDead)
         {
+            TryWalk();
             TryAttack();
         }
     }
@@ -68,7 +69,6 @@ public class ZombieController : MonoBehaviour
     {
         if(!isDead)
         {
-            TryWalk();
             HideMyMesh();
         }
     }
@@ -135,6 +135,7 @@ public class ZombieController : MonoBehaviour
         myAnim.SetBool("isWalk", false);
         myNavAgent.enabled = false;
         myCollider.enabled = false;
+        meshRenderer.enabled = true;
         Destroy(gameObject, 5.0f);      //5초 후 시체 삭제.
     }
 
