@@ -86,5 +86,7 @@ public class GameManager : MonoBehaviour
         LoadPlayerStatus();
         player.transform.position = playerSpawnPoint.position;
         player.transform.rotation = playerSpawnPoint.rotation;
-    }    
+    }
+
+    
 }
