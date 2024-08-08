@@ -88,5 +88,4 @@ public class GameManager : MonoBehaviour
         player.transform.rotation = playerSpawnPoint.rotation;
     }
 
-    
 }
