@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class EscapeZone : MonoBehaviour
 {
+    [SerializeField] private GameObject BonusPanel;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.LoadNextSceneScene();
+            GameManager.Instance.LoadNextScene();
         }
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Barricade
   - EscapeZone
   - ZombieSpawn
+  - Canvas
   layers:
   - Default
   - TransparentFX

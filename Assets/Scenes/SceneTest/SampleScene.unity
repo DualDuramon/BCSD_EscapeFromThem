@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191697351}
   - component: {fileID: 191697352}
+  - component: {fileID: 191697353}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -265,10 +266,34 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 782112906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191697353}
+        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
+        m_MethodName: StageBonus
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GRENADE
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &191697353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191697350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05442279b9292649aec90f7c3da390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &282850637
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &282850638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -496,7 +521,7 @@ GameObject:
   - component: {fileID: 332079283}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,7 +666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take 3 Grenades
+  m_text: Take a Grenade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1435,7 +1460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More 90 Bullets
+  m_text: Take 90 Bullets
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1597,6 +1622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805810270}
   - component: {fileID: 805810271}
+  - component: {fileID: 805810272}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1668,7 +1694,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753167190}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 805810272}
+        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
+        m_MethodName: StageBonus
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AMMO
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &805810272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805810269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05442279b9292649aec90f7c3da390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &962006101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674994834}
   - component: {fileID: 1674994835}
+  - component: {fileID: 1674994836}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2165,7 +2216,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612040204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1674994836}
+        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
+        m_MethodName: StageBonus
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HEAL
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1674994836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674994833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05442279b9292649aec90f7c3da390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705373958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,6 +2844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
+  myUI: {fileID: 0}
+  didPlayerGetBonus: 1
 --- !u!4 &2021431397
 Transform:
   m_ObjectHideFlags: 0
