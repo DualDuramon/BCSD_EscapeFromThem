@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log("플레이어 게임매니저 어웨잌");
+        
     }
 
     private void Start()
@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()        //다음 씬 호출 함수
     {
-        SaveNowPlayerStatus();
         StartCoroutine(LoadNextStageCoroutine());
     }
 
@@ -64,11 +63,17 @@ public class GameManager : MonoBehaviour
         asyncLoad.allowSceneActivation = false;
         ActiveBonusPanel();
 
-        while (!asyncLoad.isDone && !didPlayerGetBonus)
+        while (!didPlayerGetBonus)
         {
             yield return null;
         }
+
+        SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
+
+        //씬 로딩 후 한 프래임 대기 후 오브젝트 검색
+        yield return null;
+
         FindObjectsOfThisMap();
         RespawnPlayer();
     }
@@ -87,7 +92,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");                        //플레이어 찾기
         playerSpawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;   //플레이어 리스폰지점 찾기
-        myUI = GameObject.FindWithTag("Canvas");                //보너스 패널 찾기
+        myUI = GameObject.FindWithTag("Canvas");                                    //보너스 패널 찾기
     }
 
     private void RespawnPlayer()    //플레이어 리스폰 함수
@@ -108,7 +113,7 @@ public class GameManager : MonoBehaviour
         switch (type)
         {
             case "GRENADE": //수류탄 보너스
-                player.GetComponent<PlayerStatus>().IncreaseGrenade(1);
+                player.GetComponent<PlayerStatus>().IncreaseGrenade(3);
                 break;
             case "AMMO": //총알 보너스
                 player.GetComponent<PlayerStatus>().Increase_bullet(90);

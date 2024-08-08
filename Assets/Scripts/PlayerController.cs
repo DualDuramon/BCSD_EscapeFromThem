@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus) {
-            TryWalk();
             LookMouseCursor();
             TryGunFire();
             TryReload_Mag();
@@ -63,7 +62,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus)
+        {
+            TryWalk();
+        }
     }
 
     private void TryWalk()      //플레이어 이동 시도 함수
