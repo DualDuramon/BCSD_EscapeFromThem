@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
@@ -24,8 +25,14 @@ public class PlayerStatus : MonoBehaviour
 
     //아이템 관련
     public int nowGrenade = 1;      //현재 보유 수류탄
-    public int maxGrenade = 3;      //최대 수류탄 개수
+    public int maxGrenade = 5;      //최대 수류탄 개수
     public float throwPower = 5.0f;    //수류탄 던지기 힘
+
+
+    private void Awake()
+    {
+
+    }
 
     private void Update()
     {
@@ -45,6 +52,17 @@ public class PlayerStatus : MonoBehaviour
         nowBullet_mag = maxBullet_mag;
         nowGrenade = 1;
         throwPower = 5.0f;
+    }
+
+    public void ResetStatus(StatusSaveData saveData)
+    {
+        nowHp = saveData.nowHp;
+        nowBullet_mag = saveData.nowBullet_mag;
+        nowBullet_reserve = saveData.nowBullet_reserve;
+        nowGrenade = saveData.nowGrenade;
+        isDead = false;
+        isReloading = false;
+        nowGunCoolTime = 0.0f;
     }
 
     public void DecreaseHp(float amount)  //체력 감소 함수
@@ -103,5 +121,13 @@ public class PlayerStatus : MonoBehaviour
             nowBullet_mag = maxBullet_mag;
             nowBullet_reserve -= maxBullet_mag;
         }
+    }
+
+    public void SaveMyStatus(ref StatusSaveData to)
+    {
+        to.nowHp = nowHp;
+        to.nowBullet_mag = nowBullet_mag;
+        to.nowBullet_reserve = nowBullet_reserve;
+        to.nowGrenade = nowGrenade;
     }
 }

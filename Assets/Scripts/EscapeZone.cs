@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,8 +10,7 @@ public class EscapeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player Escaped!");
-            SceneManager.LoadScene(1);
+            GameManager.Instance.LoadNextSceneScene();
         }
     }
 }
