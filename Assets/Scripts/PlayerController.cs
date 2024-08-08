@@ -29,12 +29,20 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
     }
 
-    private void ResetStatus()
+    public void ResetStatus()
     {
         myAnim.SetInteger("Status_stg44", 2);
         myAnim.SetInteger("Status_walk", 0);
         myCol.enabled = true;
         myStatus.ResetStatus();
+    }
+
+    public void ResetStatus(ref StatusSaveData saveData)
+    {
+        myAnim.SetInteger("Status_stg44", 2);
+        myAnim.SetInteger("Status_walk", 0);
+        myCol.enabled = true;
+        myStatus.ResetStatus(ref saveData);
     }
 
     private void Start()
@@ -44,8 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!myStatus.isDead) {
-            TryWalk();
+        if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus) {
             LookMouseCursor();
             TryGunFire();
             TryReload_Mag();
@@ -55,7 +62,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus)
+        {
+            TryWalk();
+        }
     }
 
     private void TryWalk()      //플레이어 이동 시도 함수

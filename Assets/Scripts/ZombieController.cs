@@ -58,7 +58,7 @@ public class ZombieController : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
+        if (!isDead && GameManager.Instance.didPlayerGetBonus)
         {
             TryWalk();
             TryAttack();
@@ -67,7 +67,7 @@ public class ZombieController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if(!isDead)
+        if(!isDead && GameManager.Instance.didPlayerGetBonus)
         {
             HideMyMesh();
         }
