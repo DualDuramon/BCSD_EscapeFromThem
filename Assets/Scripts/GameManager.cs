@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject myUI;
     [SerializeField] private int bonusGrenade = 1;
     [SerializeField] private int bonusAmmo = 90;
+
     public bool didPlayerGetBonus = true;
 
     private void Awake()
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
         FindObjectsOfThisMap(); //맵에 필요한 오브젝트 검색
-        RespawnPlayer();        //플레이어 리스폰
+        //RespawnPlayer();        //플레이어 리스폰
     }
 
     public void LoadNextScene()        //다음 씬 호출 함수
@@ -91,12 +92,14 @@ public class GameManager : MonoBehaviour
         myUI = GameObject.FindWithTag("Canvas");                                    //보너스 패널 찾기
     }
 
+    /*
     private void RespawnPlayer()    //플레이어 리스폰 함수
     {
         LoadPlayerStatus();
         player.transform.position = playerSpawnPoint.position;
         player.transform.rotation = playerSpawnPoint.rotation;
     }
+    */
 
     private void ActiveBonusPanel()   //보너스 패널 활성화 함수
     {
