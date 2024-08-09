@@ -42,7 +42,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void ResetStatus()   //스테이터스 초기화 함수 default
+    public void ResetStatus_Default()   //스테이터스 초기화 함수 default
     {
         walkSpeed = 5.0f;
         nowHp = maxHp;
@@ -54,16 +54,16 @@ public class PlayerStatus : MonoBehaviour
         throwPower = 5.0f;
     }
 
-    public void ResetStatus(ref StatusSaveData saveData)    //스테이터스 초기화 함수
+    public void ResetStatus()    //스테이터스 초기화 함수
     {
-        walkSpeed = saveData.nowWalkSpeed;
-        nowHp = saveData.nowHp;
-        nowBullet_mag = saveData.nowBullet_mag;
-        nowBullet_reserve = saveData.nowBullet_reserve;
-        nowGrenade = saveData.nowGrenade;
-        isDead = false;
-        isReloading = false;
-        nowGunCoolTime = 0.0f;
+        walkSpeed           = GameManager.Instance.CurrentSaveData.nowWalkSpeed;
+        nowHp               = GameManager.Instance.CurrentSaveData.nowHp;
+        nowBullet_mag       = GameManager.Instance.CurrentSaveData.nowBullet_mag;
+        nowBullet_reserve   = GameManager.Instance.CurrentSaveData.nowBullet_reserve;
+        nowGrenade          = GameManager.Instance.CurrentSaveData.nowGrenade;
+        isDead              = false;
+        isReloading         = false;
+        nowGunCoolTime      = 0.0f;
     }
 
     public void MakeNowHpMax()  //현재 HP를 최대로 만들기 함수
@@ -146,7 +146,7 @@ public class PlayerStatus : MonoBehaviour
             nowBullet_reserve -= maxBullet_mag;
         }
     }
-
+    
     public void SaveMyStatus(ref StatusSaveData to) //스테이터스 저장 함수
     {
         to.nowHp = nowHp;

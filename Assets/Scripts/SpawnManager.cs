@@ -60,9 +60,9 @@ public class SpawnManager : MonoBehaviour
         TrySpawnZombie();
     }
 
-    private void RespawnPlayer()    //플레이어 리스폰 함수
+    public void RespawnPlayer()    //플레이어 리스폰 함수
     {
-        GameManager.Instance.LoadPlayerStatus();
+        player.GetComponent<PlayerController>().ResetProperties();
         player.transform.position = playerSpawnPoint.position;
         player.transform.rotation = playerSpawnPoint.rotation;
     }
@@ -90,13 +90,6 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnZombie()  //좀비 스폰 함수
     {
-        //난수생성
-        //스폰지점 선택
-        //좀비 생성
-        //좀비 카운트 업
-        //좀비 쿨타임 초기화;
-        //Instantiate(prefab_Zombie, zombieSpawnPoints[select].position, Quaternion.identity);
-
         GameObject zombie = FindDisabledZombie();
         if(zombie == null)
         {
@@ -111,14 +104,13 @@ public class SpawnManager : MonoBehaviour
         nowSpawnCoolTime = 0.0f;
     }
 
-    private void SpawnZombie_Immediately(int count)
+    private void SpawnZombie_Immediately(int count) //좀비 즉시 스폰 함수
     {
         for (int i = 0; i < count; i++)
             SpawnZombie();
-
     }
 
-    private GameObject FindDisabledZombie()
+    private GameObject FindDisabledZombie()     //스폰 안된 좀비 반환 함수
     {
         for(int i = 0; i< maxZombieCount; i++)
         {
@@ -132,5 +124,14 @@ public class SpawnManager : MonoBehaviour
     {
         DiedZombie.SetActive(false);
         nowZombieCount--;
+    }
+
+    public void ClearAllZombies()       //모든 좀비 제거 함수
+    {
+        for(int i = 0; i < maxZombieCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        nowZombieCount = 0;
     }
 }

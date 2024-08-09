@@ -351,10 +351,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5422226504165435070}
-        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
-        m_MethodName: StageBonus
-        m_Mode: 5
+      - m_Target: {fileID: 9154476505483461456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -362,7 +362,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: GRENADE
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &5422226504165435070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,10 +638,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838412824116188357}
-        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
-        m_MethodName: StageBonus
-        m_Mode: 5
+      - m_Target: {fileID: 9154476505483461456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -649,7 +649,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: AMMO
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &838412824116188357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,10 +745,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7149137582998047821}
-        m_TargetAssemblyTypeName: BonusButton, Assembly-CSharp
-        m_MethodName: StageBonus
-        m_Mode: 5
+      - m_Target: {fileID: 9154476505483461456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -756,7 +756,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: HEAL
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &7149137582998047821
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private PlayerStatus myStatus;                      //플레이어 스테이터스
     private Camera myCamera;                            //카메라
 
+    private Coroutine currentCoroutine;
+
     private void Awake()
     {
         myCamera = GetComponentInChildren<Camera>();
@@ -27,22 +29,6 @@ public class PlayerController : MonoBehaviour
         myCol = GetComponent<Collider>();
         myStatus = GetComponent<PlayerStatus>();
         myAnim = GetComponentInChildren<Animator>();
-    }
-
-    public void ResetStatus()
-    {
-        myAnim.SetInteger("Status_stg44", 2);
-        myAnim.SetInteger("Status_walk", 0);
-        myCol.enabled = true;
-        myStatus.ResetStatus();
-    }
-
-    public void ResetStatus(ref StatusSaveData saveData)
-    {
-        myAnim.SetInteger("Status_stg44", 2);
-        myAnim.SetInteger("Status_walk", 0);
-        myCol.enabled = true;
-        myStatus.ResetStatus(ref saveData);
     }
 
     private void Start()
@@ -160,7 +146,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && myStatus.CanReloading())
         {
-            StartCoroutine(ReloadingMagCoroutine());
+            currentCoroutine = StartCoroutine(ReloadingMagCoroutine());
         }
     }
 
@@ -183,9 +169,21 @@ public class PlayerController : MonoBehaviour
 
     public void Dead()  //죽음 처리 함수
     {
+        if(currentCoroutine != null)
+            StopCoroutine(currentCoroutine);
+        
         myCol.enabled = false;
         myAnim.SetInteger("Status_stg44", 4);
         myAnim.SetInteger("Status_walk", 0);
-        //Invoke("ResetStatus", 3.0f);
+
+        GameManager.Instance.ActiveRetryButton();
+    }
+
+    public void ResetProperties()
+    {
+        myAnim.SetInteger("Status_stg44", 2);
+        myAnim.SetInteger("Status_walk", 0);
+        myCol.enabled = true;
+        myStatus.ResetStatus();
     }
 }

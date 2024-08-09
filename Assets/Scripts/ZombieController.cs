@@ -149,10 +149,11 @@ public class ZombieController : MonoBehaviour
         meshRenderer.enabled = true;
 
         yield return new WaitForSeconds(5.0f);  //5초 대기 후 시체 삭제 및 후보정
+        
         spawnManager.ZombieDead(gameObject);
     }
 
-    private void AttackOff()    //공격 끝나면 공격 풀게함. 애니메이션에서 이벤트 호출
+    private void AttackOff()    //공격 끝나면 공격 풀게함 -> 애니메이션에서 이벤트 호출
     {
         isAttacking = false;
     }
