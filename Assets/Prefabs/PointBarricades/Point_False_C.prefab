@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3548792680159386059}
   - component: {fileID: 1594010217817751387}
+  - component: {fileID: 4724210418039462662}
   m_Layer: 10
   m_Name: Point_False_C
   m_TagString: Barricade
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679131137553976485}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -30.2, y: 0, z: 56.46}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42,7 +43,7 @@ Transform:
   - {fileID: 502064832172207719}
   - {fileID: 6173041813584439036}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1594010217817751387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64,6 +65,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 17.411594, y: 1.651693, z: 4.9042892}
   m_Center: {x: 0.07259965, y: 0.8258465, z: 1.1869144}
+--- !u!208 &4724210418039462662
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679131137553976485}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.705795, y: 0.8258465, z: 2.4521444}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.07259965, y: 0.8258465, z: 1.186914}
+  m_TimeToStationary: 0.5
 --- !u!1001 &258824586196210965
 PrefabInstance:
   m_ObjectHideFlags: 0

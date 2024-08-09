@@ -6366,7 +6366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cf517d06982f7448dcc9f6e01d9be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 12
+  walkSpeed: 5
   nowHp: 150
   maxHp: 150
   isDead: 0
@@ -6377,8 +6377,8 @@ MonoBehaviour:
   nowBullet_mag: 30
   maxBullet_mag: 30
   nowBullet_reserve: 90
-  nowGrenade: 3
-  maxGrenade: 3
+  nowGrenade: 1
+  maxGrenade: 5
   throwPower: 7
 --- !u!1 &5962187838174353479
 GameObject:

@@ -42,9 +42,9 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void ResetStatus()   //스테이터스 초기화 함수 default
+    public void ResetStatus_Default()   //스테이터스 초기화 함수 default
     {
-        //walkSpeed = 4.0f;
+        walkSpeed = 5.0f;
         nowHp = maxHp;
         isDead = false;
         isReloading = false;
@@ -54,15 +54,16 @@ public class PlayerStatus : MonoBehaviour
         throwPower = 5.0f;
     }
 
-    public void ResetStatus(ref StatusSaveData saveData)    //스테이터스 초기화 함수
+    public void ResetStatus()    //스테이터스 초기화 함수
     {
-        nowHp = saveData.nowHp;
-        nowBullet_mag = saveData.nowBullet_mag;
-        nowBullet_reserve = saveData.nowBullet_reserve;
-        nowGrenade = saveData.nowGrenade;
-        isDead = false;
-        isReloading = false;
-        nowGunCoolTime = 0.0f;
+        walkSpeed           = GameManager.Instance.CurrentSaveData.nowWalkSpeed;
+        nowHp               = GameManager.Instance.CurrentSaveData.nowHp;
+        nowBullet_mag       = GameManager.Instance.CurrentSaveData.nowBullet_mag;
+        nowBullet_reserve   = GameManager.Instance.CurrentSaveData.nowBullet_reserve;
+        nowGrenade          = GameManager.Instance.CurrentSaveData.nowGrenade;
+        isDead              = false;
+        isReloading         = false;
+        nowGunCoolTime      = 0.0f;
     }
 
     public void MakeNowHpMax()  //현재 HP를 최대로 만들기 함수
@@ -100,16 +101,24 @@ public class PlayerStatus : MonoBehaviour
     {
         //if (nowBullet_mag < 0) return;
         nowBullet_mag--;
+        if (nowBullet_mag < 0) nowBullet_mag = 0;
     }
 
     public bool CanThrowGrenade()   //수류탄 투척 가능 여부 체크 함수
     {
-        return nowGrenade > 0 && nowGunCoolTime >= maxGunCoolTime;
+        return nowGrenade > 0 && !isReloading && nowGunCoolTime >= maxGunCoolTime;
     }
 
     public void IncreaseGrenade(int amount) //보유 수류탄 증가 함수
     {
-        nowGrenade += amount;
+        if(nowGrenade + amount > maxGrenade)
+        {
+            nowGrenade = maxGrenade;
+        }
+        else
+        {
+            nowGrenade += amount;
+        }
     }
     
     public void DecreaseGrenade()   //보유 수류탄 감소 함수
@@ -137,12 +146,13 @@ public class PlayerStatus : MonoBehaviour
             nowBullet_reserve -= maxBullet_mag;
         }
     }
-
+    
     public void SaveMyStatus(ref StatusSaveData to) //스테이터스 저장 함수
     {
         to.nowHp = nowHp;
         to.nowBullet_mag = nowBullet_mag;
         to.nowBullet_reserve = nowBullet_reserve;
         to.nowGrenade = nowGrenade;
+        to.nowWalkSpeed = walkSpeed;
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class EscapeZone : MonoBehaviour
 {
-    [SerializeField] private GameObject BonusPanel;
 
     private void OnTriggerEnter(Collider other)
     {
