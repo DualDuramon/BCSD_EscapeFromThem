@@ -27,19 +27,20 @@ public class GameManager : MonoBehaviour
     //플레이어 관련
     [SerializeField] private GameObject player;
     [SerializeField] private StatusSaveData currentSaveData = new StatusSaveData();
-    public StatusSaveData CurrentSaveData 
-    {
-        get => currentSaveData;
-    }
+    public StatusSaveData CurrentSaveData { get => currentSaveData; }
+    public int zombieKills = 0;
+    
 
     //보너스 지급 관련
     [SerializeField] private int bonusGrenade = 1;
     [SerializeField] private int bonusAmmo = 90;
-    public bool isPause = false;
 
     //캔버스 관련
     [SerializeField] private GameObject myUI;                       //캔버스 오브젝트
     private enum CanvasChild { BONUS_PANEL = 0, RETRY_BUTTON = 1 }  //캔버스 자식 오브젝트 인덱스
+
+    //그외
+    public bool isPause = false;
 
     private void Awake()
     {
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+        CurrentSaveData.totalZombieKills += zombieKills;
         SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
     }

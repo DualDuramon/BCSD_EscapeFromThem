@@ -124,7 +124,7 @@ public class SpawnManager : MonoBehaviour
     {
         DiedZombie.SetActive(false);
         nowZombieCount--;
-        
+        GameManager.Instance.zombieKills++;
     }
 
     public void ClearAllZombies()       //모든 좀비 제거 함수

@@ -9,5 +9,5 @@ public class StatusSaveData
     public int nowBullet_reserve = 90;  //현재 예비 탄약
     public int nowGrenade = 1;          //현재 수류탄
     public float nowWalkSpeed = 5.0f;       //현재 이동속도
-    public int zombieKills = 0;         //좀비 킬 수
+    public int totalZombieKills = 0;         //좀비 킬 수
 }
