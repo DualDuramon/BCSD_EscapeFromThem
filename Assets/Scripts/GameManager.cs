@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     private void ActiveBonusPanel()   //보너스 패널 활성화 함수
     {
         didPlayerGetBonus = false;
-        myUI.transform.GetChild(0).gameObject.SetActive(true);
+        myUI.transform.GetChild(0).gameObject.SetActive(true);  //보너스 패널 가져오기
     }
 
     public void StageBonus(string type)    //보너스 지급 함수

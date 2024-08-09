@@ -381,12 +381,13 @@ MonoBehaviour:
   nowAttackCoolTime: 0
   isAttacking: 0
   walkSpeed: 3.5
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 7638393026690809857, guid: c2cefe50d1309414fa393fe59ecc6e60, type: 3}
   playerMask:
     serializedVersion: 2
     m_Bits: 64
   visibleDistance: 5
   visibleDotValue: -0.766
+  spawnManager: {fileID: 4615203863041312548, guid: e35b9ffe909b7f6469de509bc66ba997, type: 3}
 --- !u!65 &9015848250583262894
 BoxCollider:
   m_ObjectHideFlags: 0

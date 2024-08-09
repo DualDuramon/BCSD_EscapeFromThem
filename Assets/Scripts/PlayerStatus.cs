@@ -44,7 +44,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void ResetStatus()   //스테이터스 초기화 함수 default
     {
-        //walkSpeed = 4.0f;
+        walkSpeed = 5.0f;
         nowHp = maxHp;
         isDead = false;
         isReloading = false;
@@ -56,6 +56,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void ResetStatus(ref StatusSaveData saveData)    //스테이터스 초기화 함수
     {
+        walkSpeed = saveData.nowWalkSpeed;
         nowHp = saveData.nowHp;
         nowBullet_mag = saveData.nowBullet_mag;
         nowBullet_reserve = saveData.nowBullet_reserve;
@@ -152,5 +153,6 @@ public class PlayerStatus : MonoBehaviour
         to.nowBullet_mag = nowBullet_mag;
         to.nowBullet_reserve = nowBullet_reserve;
         to.nowGrenade = nowGrenade;
+        to.nowWalkSpeed = walkSpeed;
     }
 }
