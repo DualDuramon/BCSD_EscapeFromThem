@@ -46,7 +46,6 @@ public class ZombieController : MonoBehaviour
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         playerTransform = GameObject.Find("PlayerBody").transform;
         spawnManager = gameObject.GetComponentInParent<SpawnManager>();
-        //ResetProperties();
     }
 
     private void OnEnable()
@@ -66,20 +65,13 @@ public class ZombieController : MonoBehaviour
         myNavAgent.SetDestination(playerTransform.position);
         myNavAgent.speed = walkSpeed;
     }
-
-    private void Update()
-    {
-        if (!isDead && GameManager.Instance.didPlayerGetBonus)
-        {
-            TryWalk();
-            TryAttack();
-        }
-    }
     
     private void FixedUpdate()
     {
-        if(!isDead && GameManager.Instance.didPlayerGetBonus)
+        if(!isDead)
         {
+            TryWalk();
+            TryAttack();
             HideMyMesh();
         }
     }

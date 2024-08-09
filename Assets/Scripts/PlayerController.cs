@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus) {
+        if (!myStatus.isDead && !GameManager.Instance.isPause) {
             LookMouseCursor();
             TryGunFire();
             TryReload_Mag();
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!myStatus.isDead && GameManager.Instance.didPlayerGetBonus)
+        if (!myStatus.isDead && !GameManager.Instance.isPause)
         {
             TryWalk();
         }

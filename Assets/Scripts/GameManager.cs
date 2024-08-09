@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     //보너스 지급 관련
     [SerializeField] private int bonusGrenade = 1;
     [SerializeField] private int bonusAmmo = 90;
-    public bool didPlayerGetBonus = true;
+    public bool isPause = false;
 
     //캔버스 관련
     [SerializeField] private GameObject myUI;                       //캔버스 오브젝트
@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()        //다음 씬 호출 함수
     {
+        isPause = true;
+        Time.timeScale = 0.0f;
         StartCoroutine(LoadNextStageCoroutine());
     }
 
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour
         asyncLoad.allowSceneActivation = false;
         ActiveBonusPanel();
 
-        while (!didPlayerGetBonus)
+        while (isPause)
         {
             yield return null;
         }
@@ -99,7 +101,6 @@ public class GameManager : MonoBehaviour
 
     private void ActiveBonusPanel()   //보너스 패널 활성화 함수
     {
-        didPlayerGetBonus = false;
         myUI.transform.GetChild((int)CanvasChild.BONUS_PANEL).gameObject.SetActive(true);  //보너스 패널 가져오기
     }
 
@@ -123,7 +124,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        didPlayerGetBonus = true;
+        isPause = false;
+        Time.timeScale = 1.0f;
     }
 
     public void ActiveRetryButton()     //재시작 버튼 활성화
