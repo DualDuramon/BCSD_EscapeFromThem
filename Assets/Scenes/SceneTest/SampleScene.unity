@@ -507,6 +507,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287061483}
   m_CullTransparentMesh: 1
+--- !u!1 &297652487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297652489}
+  - component: {fileID: 297652488}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &297652488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297652487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7742799933c32354e99a4913064984c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &297652489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297652487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332079282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1902,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.047058824, g: 0.047058824, b: 0.078431375, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2845,6 +2889,8 @@ MonoBehaviour:
   player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   myUI: {fileID: 0}
+  bonusGrenade: 1
+  bonusAmmo: 90
   didPlayerGetBonus: 1
 --- !u!4 &2021431397
 Transform:
@@ -2855,7 +2901,7 @@ Transform:
   m_GameObject: {fileID: 2021431395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3464773, y: -9.272322, z: 3.3928072}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3000,6 +3046,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2340959012908270657, guid: c2cefe50d1309414fa393fe59ecc6e60, type: 3}
+      propertyPath: maxGrenade
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340959012908270657, guid: c2cefe50d1309414fa393fe59ecc6e60, type: 3}
       propertyPath: nowGrenade
       value: 1
       objectReference: {fileID: 0}
@@ -3066,5 +3116,6 @@ SceneRoots:
   - {fileID: 1022936816}
   - {fileID: 1137520813863669910}
   - {fileID: 2021431397}
+  - {fileID: 297652489}
   - {fileID: 332079286}
   - {fileID: 389530104}

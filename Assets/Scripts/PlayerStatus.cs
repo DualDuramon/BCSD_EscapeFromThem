@@ -100,16 +100,24 @@ public class PlayerStatus : MonoBehaviour
     {
         //if (nowBullet_mag < 0) return;
         nowBullet_mag--;
+        if (nowBullet_mag < 0) nowBullet_mag = 0;
     }
 
     public bool CanThrowGrenade()   //수류탄 투척 가능 여부 체크 함수
     {
-        return nowGrenade > 0 && nowGunCoolTime >= maxGunCoolTime;
+        return nowGrenade > 0 && !isReloading && nowGunCoolTime >= maxGunCoolTime;
     }
 
     public void IncreaseGrenade(int amount) //보유 수류탄 증가 함수
     {
-        nowGrenade += amount;
+        if(nowGrenade + amount > maxGrenade)
+        {
+            nowGrenade = maxGrenade;
+        }
+        else
+        {
+            nowGrenade += amount;
+        }
     }
     
     public void DecreaseGrenade()   //보유 수류탄 감소 함수

@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     //보너스 지급 관련
     [SerializeField] private GameObject myUI;
+    [SerializeField] private int bonusGrenade = 1;
+    [SerializeField] private int bonusAmmo = 90;
     public bool didPlayerGetBonus = true;
 
     private void Awake()
@@ -43,13 +45,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;  //씬 로드시 필요한 함수들 실행
     }
 
-    private void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
-        FindObjectsOfThisMap();
-        RespawnPlayer();
+        FindObjectsOfThisMap(); //맵에 필요한 오브젝트 검색
+        RespawnPlayer();        //플레이어 리스폰
     }
 
     public void LoadNextScene()        //다음 씬 호출 함수
@@ -70,12 +72,6 @@ public class GameManager : MonoBehaviour
 
         SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
-
-        //씬 로딩 후 한 프래임 대기 후 오브젝트 검색
-        yield return null;
-
-        FindObjectsOfThisMap();
-        RespawnPlayer();
     }
 
     private void SaveNowPlayerStatus()  //플레이어 스테이터스 임시 저장 함수
@@ -113,10 +109,10 @@ public class GameManager : MonoBehaviour
         switch (type)
         {
             case "GRENADE": //수류탄 보너스
-                player.GetComponent<PlayerStatus>().IncreaseGrenade(3);
+                player.GetComponent<PlayerStatus>().IncreaseGrenade(bonusGrenade);
                 break;
             case "AMMO": //총알 보너스
-                player.GetComponent<PlayerStatus>().Increase_bullet(90);
+                player.GetComponent<PlayerStatus>().Increase_bullet(bonusAmmo);
                 break;
             case "HEAL": //체력 보너스
                 player.GetComponent<PlayerStatus>().MakeNowHpMax();
