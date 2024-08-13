@@ -92,6 +92,11 @@ public class GameManager : MonoBehaviour
         asyncLoad.allowSceneActivation = true;
     }
 
+    public void LoadNextSceneFromTitle()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(++nowStageIndex);
+    }
+
     private void SaveNowPlayerStatus()  //플레이어 스테이터스 임시 저장 함수
     {
         player.GetComponent<PlayerStatus>().SaveMyStatus(ref currentSaveData);

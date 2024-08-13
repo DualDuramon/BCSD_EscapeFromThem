@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -76,6 +76,12 @@ public class UIManager : MonoBehaviour
     public void StageBonust(string type)    //스테이지 보너스 함수 -> 게임매니저 호출
     {
         GameManager.Instance.StageBonus(type);
+    }
+
+    //타이틀 씬 관련 버튼 함수들
+    public void StartGame() //start 버튼 함수
+    {
+        GameManager.Instance.LoadNextSceneFromTitle();
     }
 
     public void QuitGame()  //게임종료 함수
