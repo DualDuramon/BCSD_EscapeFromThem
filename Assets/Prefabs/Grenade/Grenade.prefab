@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 120
-  explodeRange: 2.2
+  explodeRange: 2.5
   explodeParticle: {fileID: 787463116977425366, guid: ae5117c5f7fa85049ab17a7302b3c666, type: 3}
   targetMask:
     serializedVersion: 2

@@ -65,6 +65,7 @@ public class SpawnManager : MonoBehaviour
         player.GetComponent<PlayerController>().ResetProperties();
         player.transform.position = playerSpawnPoint.position;
         player.transform.rotation = playerSpawnPoint.rotation;
+        GameManager.Instance.ResetStageUIs();
     }
 
     private void InstantiateZombies()   //좀비 오브젝트 풀링 함수

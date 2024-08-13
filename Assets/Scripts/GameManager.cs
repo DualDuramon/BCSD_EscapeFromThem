@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     #endregion
     
     //씬 관련
-    private int nowStageIndex = 0;
+    public int nowStageIndex = 0;
     
     //플레이어 관련
     [SerializeField] private GameObject player;
@@ -30,15 +30,13 @@ public class GameManager : MonoBehaviour
     public StatusSaveData CurrentSaveData { get => currentSaveData; }
     public int zombieKills = 0;
     
-
     //보너스 지급 관련
     [SerializeField] private int bonusGrenade = 1;
     [SerializeField] private int bonusAmmo = 90;
 
     //캔버스 관련
-    [SerializeField] private GameObject myUI;                       //캔버스 오브젝트
-    private enum CanvasChild { BONUS_PANEL = 0, RETRY_BUTTON = 1 }  //캔버스 자식 오브젝트 인덱스
-
+    [SerializeField] private UIManager myUI;                       //캔버스 오브젝트
+    
     //그외
     public bool isPause = false;
 
@@ -62,6 +60,15 @@ public class GameManager : MonoBehaviour
         //RespawnPlayer();        //플레이어 리스폰
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && !myUI.BonusPanel.activeSelf)
+        {
+            isPause = !isPause;
+            myUI.ShowPauseMenuPanel(isPause);
+        }
+    }
+
     public void LoadNextScene()        //다음 씬 호출 함수
     {
         isPause = true;
@@ -73,7 +80,7 @@ public class GameManager : MonoBehaviour
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(++nowStageIndex);
         asyncLoad.allowSceneActivation = false;
-        ActiveBonusPanel();
+        myUI.ShowBonusPanel(true);
 
         while (isPause)
         {
@@ -98,12 +105,7 @@ public class GameManager : MonoBehaviour
     private void FindObjectsOfThisMap() //맵 상에 존재하는 필요한 오브젝트들 찾기 함수
     {
         player = GameObject.FindGameObjectWithTag("Player");                        //플레이어 찾기
-        myUI = GameObject.FindWithTag("Canvas");                                    //보너스 패널 찾기
-    }
-
-    private void ActiveBonusPanel()   //보너스 패널 활성화 함수
-    {
-        myUI.transform.GetChild((int)CanvasChild.BONUS_PANEL).gameObject.SetActive(true);  //보너스 패널 가져오기
+        myUI = FindAnyObjectByType<UIManager>();                                    //보너스 패널 찾기
     }
 
     public void StageBonus(string type)    //보너스 지급 함수  -> 보너스 패널 버튼에서 호출
@@ -111,17 +113,17 @@ public class GameManager : MonoBehaviour
         switch (type)
         {
             case "GRENADE": //수류탄 보너스
-                player.GetComponent<PlayerStatus>().IncreaseGrenade(bonusGrenade);
+                player.GetComponent<PlayerStatus>().Calculate_Grenade(bonusGrenade);
                 break;
             case "AMMO": //총알 보너스
-                player.GetComponent<PlayerStatus>().Increase_bullet(bonusAmmo);
+                player.GetComponent<PlayerStatus>().Increase_ServedBullet(bonusAmmo);
                 break;
             case "HEAL": //체력 보너스
                 player.GetComponent<PlayerStatus>().MakeNowHpMax();
                 break;
             
             default:
-                player.GetComponent<PlayerStatus>().IncreaseGrenade(bonusAmmo);
+                player.GetComponent<PlayerStatus>().Increase_ServedBullet(bonusAmmo);
                 Debug.Log("보너스 타입이 잘못되었습니다. -> 총알 추가 지급");
                 break;
         }
@@ -132,6 +134,12 @@ public class GameManager : MonoBehaviour
 
     public void ActiveRetryButton()     //재시작 버튼 활성화
     {
-        myUI.transform.GetChild((int)CanvasChild.RETRY_BUTTON).gameObject.SetActive(true);
+        //myUI.transform.GetChild((int)CanvasChild.RETRY_BUTTON).gameObject.SetActive(true);
+        myUI.ShowGameOverRetryButton(true);
+    }
+
+    public void ResetStageUIs() //UI매니저의 텍스트 초기화 함수 호출
+    {
+        myUI.ResetAllTexts(ref currentSaveData);
     }
 }

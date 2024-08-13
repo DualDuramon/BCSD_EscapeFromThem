@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class StatusSaveData
 {
     public float nowHp = 150.0f;        //현재 체력
