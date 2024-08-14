@@ -31,11 +31,6 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
     }
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (!myStatus.isDead && !GameManager.Instance.isPause) {
@@ -121,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     private void GunFire()  //사격 함수
     {
-        myStatus.Decrease_bullet();
+        myStatus.Decrease_nowBullet();
         Instantiate(bulletPrefab, bulletPos.position, bulletPos.rotation);
         myStatus.nowGunCoolTime = 0.0f;
     }
@@ -134,11 +129,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ThrowGrenade() //수류탄 투척 시도 함수
+    private void ThrowGrenade() //수류탄 투척 함수
     {
         GameObject grenade = Instantiate(grenadePrefab, grenadePos.position, Quaternion.identity);
         grenade.transform.GetComponent<Rigidbody>().AddForce(grenadePos.forward.normalized * myStatus.throwPower, ForceMode.Impulse);
-        myStatus.DecreaseGrenade();
+        myStatus.Calculate_Grenade(-1);
         myStatus.nowGunCoolTime = 0.0f;
     }
 

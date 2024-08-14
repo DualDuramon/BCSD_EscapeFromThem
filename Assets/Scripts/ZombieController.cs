@@ -140,6 +140,8 @@ public class ZombieController : MonoBehaviour
         myCollider.enabled = false;
         meshRenderer.enabled = true;
 
+        GameManager.Instance.zombieKills++;
+
         yield return new WaitForSeconds(5.0f);  //5초 대기 후 시체 삭제 및 후보정
         
         spawnManager.ZombieDead(gameObject);

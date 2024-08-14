@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class StatusSaveData
 {
     public float nowHp = 150.0f;        //현재 체력
@@ -10,4 +11,14 @@ public class StatusSaveData
     public int nowGrenade = 1;          //현재 수류탄
     public float nowWalkSpeed = 5.0f;       //현재 이동속도
     public int totalZombieKills = 0;         //좀비 킬 수
+
+    public void ResetData() //데이터 초기화 함수
+    {
+        nowHp = 150.0f;
+        nowBullet_mag = 30;
+        nowBullet_reserve = 90;
+        nowGrenade = 1;
+        nowWalkSpeed = 5.0f;
+        totalZombieKills = 0;
+    }
 }

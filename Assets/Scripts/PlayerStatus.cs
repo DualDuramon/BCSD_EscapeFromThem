@@ -28,10 +28,13 @@ public class PlayerStatus : MonoBehaviour
     public int maxGrenade = 5;      //최대 수류탄 개수
     public float throwPower = 5.0f;    //수류탄 던지기 힘
 
+    //그외
+    [SerializeField] private UIManager myUI;
 
     private void Awake()
     {
-
+        myUI = FindAnyObjectByType<UIManager>();
+        Debug.Log("UIUpdate");
     }
 
     private void Update()
@@ -77,8 +80,10 @@ public class PlayerStatus : MonoBehaviour
 
         if(nowHp <= 0)
         {
+            nowHp = 0;
             Dead();
         }
+        myUI.UpdateHpData(nowHp);
     }
 
     public void Dead()  //사망 시 스테이터스 처리 함수
@@ -92,16 +97,19 @@ public class PlayerStatus : MonoBehaviour
         return nowGunCoolTime >= maxGunCoolTime && nowBullet_mag > 0;
     }
 
-    public void Increase_bullet(int amount)     //보유 총알 증가 함수
+    public void Increase_ServedBullet(int amount)     //보유 총알 증가 함수
     {
         nowBullet_reserve += amount;
+        myUI.UpdateBulletData(nowBullet_mag, nowBullet_reserve);
     }
 
-    public void Decrease_bullet()   //총알 감소 함수 -> 총 발사할때 사용
+    public void Decrease_nowBullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
         //if (nowBullet_mag < 0) return;
         nowBullet_mag--;
         if (nowBullet_mag < 0) nowBullet_mag = 0;
+
+        myUI.UpdateBulletData(nowBullet_mag, nowBullet_reserve);
     }
 
     public bool CanThrowGrenade()   //수류탄 투척 가능 여부 체크 함수
@@ -109,21 +117,10 @@ public class PlayerStatus : MonoBehaviour
         return nowGrenade > 0 && !isReloading && nowGunCoolTime >= maxGunCoolTime;
     }
 
-    public void IncreaseGrenade(int amount) //보유 수류탄 증가 함수
-    {
-        if(nowGrenade + amount > maxGrenade)
-        {
-            nowGrenade = maxGrenade;
-        }
-        else
-        {
-            nowGrenade += amount;
-        }
-    }
-    
-    public void DecreaseGrenade()   //보유 수류탄 감소 함수
-    {
-        nowGrenade--;
+    public void Calculate_Grenade(int amount) //보유 수류탄 계산 함수
+    {    
+        nowGrenade += amount;            
+        myUI.UpdateGrenadeData(nowGrenade);
     }
     
     public bool CanReloading()  //재장전 가능 여부 체크 함수
@@ -145,6 +142,8 @@ public class PlayerStatus : MonoBehaviour
             nowBullet_mag = maxBullet_mag;
             nowBullet_reserve -= maxBullet_mag;
         }
+
+        myUI.UpdateBulletData(nowBullet_mag, nowBullet_reserve);
     }
     
     public void SaveMyStatus(ref StatusSaveData to) //스테이터스 저장 함수
