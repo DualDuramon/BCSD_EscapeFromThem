@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
     //타이틀 씬 관련 버튼 함수들
     public void StartGame() //start 버튼 함수
     {
-        GameManager.Instance.LoadNextSceneFromTitle();
+        GameManager.Instance.LoadNextScene();
     }
 
     public void QuitGame()  //게임종료 함수

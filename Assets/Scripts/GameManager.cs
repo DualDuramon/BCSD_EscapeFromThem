@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -57,7 +60,6 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
         FindObjectsOfThisMap(); //맵에 필요한 오브젝트 검색
-        //RespawnPlayer();        //플레이어 리스폰
     }
 
     private void Update()
@@ -71,6 +73,19 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()        //다음 씬 호출 함수
     {
+        if (nowStageIndex == 0)
+        {
+            SceneManager.LoadSceneAsync(++nowStageIndex);
+            return;
+        }
+        else if(nowStageIndex == SceneManager.sceneCountInBuildSettings - 1)    //score scene일 경우
+        {
+            Debug.Log("야호");
+            ClearCurrentSaveData();
+            SceneManager.LoadSceneAsync(nowStageIndex);
+            return;
+        }
+
         isPause = true;
         Time.timeScale = 0.0f;
         StartCoroutine(LoadNextStageCoroutine());
@@ -79,6 +94,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator LoadNextStageCoroutine()        //씬 로딩 코루틴
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(++nowStageIndex);
+
         asyncLoad.allowSceneActivation = false;
         myUI.ShowBonusPanel(true);
 
@@ -90,22 +106,27 @@ public class GameManager : MonoBehaviour
         CurrentSaveData.totalZombieKills += zombieKills;
         SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
+
     }
 
+    /*
     public void LoadNextSceneFromTitle()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(++nowStageIndex);
     }
+    */
 
     private void SaveNowPlayerStatus()  //플레이어 스테이터스 임시 저장 함수
     {
         player.GetComponent<PlayerStatus>().SaveMyStatus(ref currentSaveData);
     }
 
+    /*
     public void LoadPlayerStatus()      //임시 플레이어 스테이터스 데이터 로드 함수
     {
         player.GetComponent<PlayerController>().ResetProperties();
     }
+    */
 
     private void FindObjectsOfThisMap() //맵 상에 존재하는 필요한 오브젝트들 찾기 함수
     {
@@ -139,12 +160,17 @@ public class GameManager : MonoBehaviour
 
     public void ActiveRetryButton()     //재시작 버튼 활성화
     {
-        //myUI.transform.GetChild((int)CanvasChild.RETRY_BUTTON).gameObject.SetActive(true);
         myUI.ShowGameOverRetryButton(true);
     }
 
     public void ResetStageUIs() //UI매니저의 텍스트 초기화 함수 호출
     {
         myUI.ResetAllTexts(ref currentSaveData);
+    }
+
+    private void ClearCurrentSaveData() //임시 세이브 데이터 삭제
+    {
+        nowStageIndex = 0;
+        currentSaveData.ResetData();
     }
 }

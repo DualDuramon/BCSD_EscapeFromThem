@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 81991ab7539e5e64e8c11867f0bb7b1d, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: f69148c7afa753f49be358a805758f5b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9317,6 +9317,10 @@ PrefabInstance:
     - target: {fileID: 2757470561022610582, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972142623694199668, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
+      propertyPath: currentSaveData.nowGrenade
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7085396655679352867, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: m_LocalPosition.x
