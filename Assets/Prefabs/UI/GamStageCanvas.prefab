@@ -1756,12 +1756,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 546606191775630408}
-  - {fileID: 3039122406159006395}
   - {fileID: 3591038177237164650}
   - {fileID: 8725237166139318733}
   - {fileID: 5220712726325088440}
   - {fileID: 3794487368809107530}
+  - {fileID: 546606191775630408}
+  - {fileID: 3039122406159006395}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1804,12 +1804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1852,7 +1852,6 @@ MonoBehaviour:
   servedBulletText: {fileID: 6810817201941690723}
   HpText: {fileID: 3400544877325688598}
   StageIndex: {fileID: 1128549913861491063}
-  zombieKillsText: {fileID: 0}
 --- !u!1 &4336566368583111696
 GameObject:
   m_ObjectHideFlags: 0
