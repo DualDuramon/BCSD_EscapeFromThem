@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7085396655679352867}
   - component: {fileID: 6972142623694199668}
+  - component: {fileID: 514617795638652299}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,9 +45,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beef683b4cb46af4f9192d72ca0a86bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowStageIndex: 0
   player: {fileID: 0}
-  playerSpawnPoint: {fileID: 0}
-  myUI: {fileID: 0}
+  currentSaveData:
+    nowHp: 150
+    nowBullet_mag: 30
+    nowBullet_reserve: 90
+    nowGrenade: 2
+    nowWalkSpeed: 5
+    totalZombieKills: 0
+  zombieKills: 0
   bonusGrenade: 2
   bonusAmmo: 90
-  didPlayerGetBonus: 1
+  myUI: {fileID: 0}
+  isPause: 0
+  saveLoadManager: {fileID: 514617795638652299}
+--- !u!114 &514617795638652299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757470561022610582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad8c6060e8af2947921d65a52569847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

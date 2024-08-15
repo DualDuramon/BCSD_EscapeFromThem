@@ -34,7 +34,6 @@ public class PlayerStatus : MonoBehaviour
     private void Awake()
     {
         myUI = FindAnyObjectByType<UIManager>();
-        Debug.Log("UIUpdate");
     }
 
     private void Update()
@@ -105,7 +104,6 @@ public class PlayerStatus : MonoBehaviour
 
     public void Decrease_nowBullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
-        //if (nowBullet_mag < 0) return;
         nowBullet_mag--;
         if (nowBullet_mag < 0) nowBullet_mag = 0;
 

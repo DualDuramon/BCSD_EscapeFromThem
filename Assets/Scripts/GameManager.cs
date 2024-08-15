@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     //플레이어 관련
     [SerializeField] private GameObject player;
     [SerializeField] private StatusSaveData currentSaveData = new StatusSaveData();
-    public StatusSaveData CurrentSaveData { get => currentSaveData; }
+    public StatusSaveData CurrentSaveData { get => currentSaveData; set { currentSaveData = value; } }
     public int zombieKills = 0;
     
     //보너스 지급 관련
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     
     //그외
     public bool isPause = false;
+    public SaveLoad saveLoadManager;
 
     private void Awake()
     {
@@ -55,6 +57,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         SceneManager.sceneLoaded += OnSceneLoaded;  //씬 로드시 필요한 함수들 실행
+
+        //saveLoadManager.LoadData();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
@@ -71,25 +75,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadNextScene()  //다음 씬 호출 함수
+    public void LoadNextScene()  //다음 씬 로딩 함수
     {
         if (nowStageIndex == 0) //타이틀 씬에서 호출할 경우
         {
-            SceneManager.LoadSceneAsync(++nowStageIndex);
-        }
-        else if(nowStageIndex == SceneManager.sceneCountInBuildSettings - 1) //score scene에서 호출할 경우
-        {
             ClearCurrentSaveData();
-            SceneManager.LoadSceneAsync(nowStageIndex);
+            SceneManager.LoadSceneAsync(++nowStageIndex);
+            SoundManager.Instance.PlayBGM(nowStageIndex);
         }
-        else
+        else if(nowStageIndex < SceneManager.sceneCountInBuildSettings - 2) //게임 스테이지에서 호출할 경우
         {
             isPause = true;
             Time.timeScale = 0.0f;
             StartCoroutine(LoadNextStageCoroutine());
         }
+        else
+        {
+            int index = (++nowStageIndex) % SceneManager.sceneCountInBuildSettings;
+            SaveNowPlayerStatus();
+            SceneManager.LoadSceneAsync(index);
+            SoundManager.Instance.PlayBGM(index);
+        }
+    }
 
+    public void LoadCurrentScene()    //세이브된 씬 로딩 함수
+    {
         SoundManager.Instance.PlayBGM(nowStageIndex);
+        SceneManager.LoadSceneAsync(nowStageIndex);
+    }
+
+    public void GoToTitleScene()
+    {
+        nowStageIndex = 0;
+        SoundManager.Instance.PlayBGM(0);
+        SceneManager.LoadSceneAsync(0);
     }
 
     private IEnumerator LoadNextStageCoroutine()        //씬 로딩 코루틴
@@ -98,15 +117,17 @@ public class GameManager : MonoBehaviour
 
         asyncLoad.allowSceneActivation = false;
         myUI.ShowBonusPanel(true);
-
+        CurrentSaveData.totalZombieKills += zombieKills;
+        zombieKills = 0;
+        
         while (isPause)
         {
             yield return null;
         }
 
-        CurrentSaveData.totalZombieKills += zombieKills;
-        zombieKills = 0;
         SaveNowPlayerStatus();
+        saveLoadManager.SaveData();
+        SoundManager.Instance.PlayBGM(nowStageIndex);
         asyncLoad.allowSceneActivation = true;
 
     }
@@ -121,6 +142,7 @@ public class GameManager : MonoBehaviour
     private void SaveNowPlayerStatus()  //플레이어 스테이터스 임시 저장 함수
     {
         player.GetComponent<PlayerStatus>().SaveMyStatus(ref currentSaveData);
+        currentSaveData.nowStageIndex = nowStageIndex;
     }
 
     /*
@@ -130,13 +152,13 @@ public class GameManager : MonoBehaviour
     }
     */
 
-    private void FindObjectsOfThisMap() //맵 상에 존재하는 필요한 오브젝트들 찾기 함수
+    private void FindObjectsOfThisMap()     //맵 상에 존재하는 필요한 오브젝트들 찾기 함수
     {
         player = GameObject.FindGameObjectWithTag("Player");                        //플레이어 찾기
         myUI = FindAnyObjectByType<UIManager>();                                    //보너스 패널 찾기
     }
 
-    public void StageBonus(string type)    //보너스 지급 함수  -> 보너스 패널 버튼에서 호출
+    public void StageBonus(string type)     //보너스 지급 함수  -> 보너스 패널 버튼에서 호출
     {
         switch (type)
         {
@@ -160,17 +182,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    public void ActiveRetryButton()     //재시작 버튼 활성화
+    public void ActiveRetryButton()         //재시작 버튼 활성화
     {
         myUI.ShowGameOverRetryButton(true);
     }
 
-    public void ResetStageUIs() //UI매니저의 텍스트 초기화 함수 호출
+    public void ResetStageUIs()             //UI매니저의 텍스트 초기화 함수 호출
     {
         myUI.ResetAllTexts(ref currentSaveData);
     }
 
-    private void ClearCurrentSaveData() //임시 세이브 데이터 삭제
+    private void ClearCurrentSaveData()     //임시 세이브 데이터 삭제
     {
         nowStageIndex = 0;
         currentSaveData.ResetData();

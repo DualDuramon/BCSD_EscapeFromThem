@@ -99,10 +99,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(int index)
     {
-        if (index >= bgmClip.Length) return;
-
         bgmPlayer.Stop();
-        bgmPlayer.clip = bgmClip[index];
+        bgmPlayer.clip = (index >= bgmClip.Length) ? bgmClip[bgmClip.Length - 1] : bgmClip[index];
         bgmPlayer.Play();
     }
 
