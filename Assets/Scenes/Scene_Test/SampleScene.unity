@@ -1016,8 +1016,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5717832366831433402, guid: 27ef5d67a8c3d3243b04010676552fac, type: 3}
-      propertyPath: sfxVolume
-      value: 0.4
+      propertyPath: bgmVolume
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 7313785300679029429, guid: 27ef5d67a8c3d3243b04010676552fac, type: 3}
       propertyPath: m_Name
@@ -1198,7 +1198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972142623694199668, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: currentSaveData.nowGrenade
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7085396655679352867, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: m_LocalPosition.x

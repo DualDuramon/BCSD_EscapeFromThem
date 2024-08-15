@@ -22,8 +22,9 @@ public class SoundManager : MonoBehaviour
     }
 
     [Header("BGM")] //BGM 관련
-    [SerializeField] private AudioClip bgmClip;         //배경음악 클립
+    [SerializeField] private AudioClip[] bgmClip;         //배경음악 클립
     [SerializeField] private AudioSource bgmPlayer;     //배경음악 소스
+    [SerializeField] private float bgmVolume = 1.0f;    //배경음악 볼륨
 
     [Header("SFX")] //SFX 관련
     [SerializeField] private AudioClip[] sfxClips;      //효과음 클립
@@ -53,17 +54,28 @@ public class SoundManager : MonoBehaviour
         InitiateSounds();
     }
 
+    private void Start()
+    {
+        bgmPlayer.Play();
+    }
+
+    private void FixedUpdate()
+    {
+        bgmPlayer.volume = bgmVolume * 0.5f;
+    }
+
     private void InitiateSounds()
     {
-        //BGM 초기화
+        //BGM 생성 및 초기화
         GameObject Obj = new GameObject("BGM_Player");
         Obj.transform.SetParent(transform);
         bgmPlayer = Obj.AddComponent<AudioSource>();
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
-        bgmPlayer.clip = bgmClip;
+        bgmPlayer.volume = bgmVolume;
+        bgmPlayer.clip = bgmClip[0];
 
-        //SFX 생성
+        //SFX 생성 및 초기화
         GameObject sfxObj = new GameObject("SFX_Player");
         sfxObj.transform.SetParent(transform);
         sfxPlayers = new AudioSource[channels];
@@ -77,21 +89,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        //BGM 재생
-    }
-
     public void PlayBGM(bool isPlay)
     {
         if (isPlay)
-        {
             bgmPlayer.Play();
-        }
         else
-        {
             bgmPlayer.Stop();
-        }
+    }
+
+    public void PlayBGM(int index)
+    {
+        if (index >= bgmClip.Length) return;
+
+        bgmPlayer.Stop();
+        bgmPlayer.clip = bgmClip[index];
+        bgmPlayer.Play();
     }
 
     public void PlaySFX(SFXPlayerType type)
