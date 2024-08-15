@@ -118,7 +118,9 @@ public class PlayerController : MonoBehaviour
     {
         myStatus.Decrease_nowBullet();
         Instantiate(bulletPrefab, bulletPos.position, bulletPos.rotation);
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.PlayerFire);
         myStatus.nowGunCoolTime = 0.0f;
+        
     }
 
     private void TryThrowGrenade()  //수류탄 투척 시도 함수
@@ -159,6 +161,7 @@ public class PlayerController : MonoBehaviour
         myStatus.Calculate_Bullet_Reload();
         myAnim.SetInteger("Status_stg44", 2);
         myStatus.isReloading = false;
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.PlayerReload);
         Debug.Log("재장전 완료");
     }
 
@@ -170,6 +173,7 @@ public class PlayerController : MonoBehaviour
         myCol.enabled = false;
         myAnim.SetInteger("Status_stg44", 4);
         myAnim.SetInteger("Status_walk", 0);
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.PlayerDeath);
 
         GameManager.Instance.ActiveRetryButton();
     }

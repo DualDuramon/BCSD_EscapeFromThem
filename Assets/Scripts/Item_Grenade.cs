@@ -11,15 +11,16 @@ public class Item_Grenade : MonoBehaviour
     [SerializeField] private LayerMask targetMask;              //폭발 피격 대상 레이어
 
 
-    private void Start()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Player") return;    //플레이어와 충돌한건 무시
         Explode();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.25f);
+        Gizmos.DrawSphere(transform.position, explodeRange);
     }
 
     private void Explode()  //수류탄 폭발 함수
@@ -30,8 +31,11 @@ public class Item_Grenade : MonoBehaviour
         foreach (RaycastHit hitData in raycasts)
         {
             RaycastHit obstCast;
-            Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast);
-            if (obstCast.transform.tag != hitData.transform.tag) continue;
+            Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast, explodeRange * 1.2f, targetMask);
+            if (obstCast.transform.tag != hitData.transform.tag)
+            {
+                continue;
+            } 
 
             Debug.Log("수류탄 감지 : " + hitData.transform.name);
             switch (hitData.transform.tag)
@@ -44,6 +48,7 @@ public class Item_Grenade : MonoBehaviour
                     break;
             }
         }
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.GrenadeExplosion);
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

@@ -387,6 +387,8 @@ MonoBehaviour:
     m_Bits: 64
   visibleDistance: 5
   visibleDotValue: -0.766
+  maxDistance: 10
+  grwlingSource: {fileID: 0}
   spawnManager: {fileID: 4615203863041312548, guid: e35b9ffe909b7f6469de509bc66ba997, type: 3}
 --- !u!65 &9015848250583262894
 BoxCollider:

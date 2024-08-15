@@ -71,24 +71,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadNextScene()        //다음 씬 호출 함수
+    public void LoadNextScene()  //다음 씬 호출 함수
     {
-        if (nowStageIndex == 0)
+        if (nowStageIndex == 0) //타이틀 씬에서 호출할 경우
         {
             SceneManager.LoadSceneAsync(++nowStageIndex);
-            return;
         }
-        else if(nowStageIndex == SceneManager.sceneCountInBuildSettings - 1)    //score scene일 경우
+        else if(nowStageIndex == SceneManager.sceneCountInBuildSettings - 1) //score scene에서 호출할 경우
         {
-            Debug.Log("야호");
             ClearCurrentSaveData();
             SceneManager.LoadSceneAsync(nowStageIndex);
-            return;
+        }
+        else
+        {
+            isPause = true;
+            Time.timeScale = 0.0f;
+            StartCoroutine(LoadNextStageCoroutine());
         }
 
-        isPause = true;
-        Time.timeScale = 0.0f;
-        StartCoroutine(LoadNextStageCoroutine());
+        SoundManager.Instance.PlayBGM(nowStageIndex);
     }
 
     private IEnumerator LoadNextStageCoroutine()        //씬 로딩 코루틴
@@ -104,6 +105,7 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentSaveData.totalZombieKills += zombieKills;
+        zombieKills = 0;
         SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
 
