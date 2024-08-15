@@ -139,8 +139,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14, y: 0.2, z: 0.1}
-  m_Center: {x: -0.019314952, y: -0.053960778, z: 0}
+  m_Size: {x: 0.1810765, y: 0.27197373, z: 0.1}
+  m_Center: {x: -0.02042436, y: -0.038594726, z: 0}
 --- !u!54 &6330820034493542938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 120
-  explodeRange: 2.5
+  explodeRange: 3
   explodeParticle: {fileID: 787463116977425366, guid: ae5117c5f7fa85049ab17a7302b3c666, type: 3}
   targetMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 704
 --- !u!1 &6708784983827199037
 GameObject:
   m_ObjectHideFlags: 0

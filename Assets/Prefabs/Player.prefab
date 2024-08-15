@@ -6264,6 +6264,7 @@ GameObject:
   - component: {fileID: 1603280192354602521}
   - component: {fileID: 2601041625289086827}
   - component: {fileID: 2340959012908270657}
+  - component: {fileID: 1512861779658599046}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -6378,10 +6379,18 @@ MonoBehaviour:
   nowBullet_mag: 30
   maxBullet_mag: 30
   nowBullet_reserve: 90
-  nowGrenade: 1
+  nowGrenade: 4
   maxGrenade: 5
   throwPower: 7
   myUI: {fileID: 0}
+--- !u!81 &1512861779658599046
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956258133990121382}
+  m_Enabled: 1
 --- !u!1 &5962187838174353479
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,7 +7090,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5992985582470138201}
   - component: {fileID: 5699362144277983546}
-  - component: {fileID: 9131326606442676964}
   - component: {fileID: 4583840034765390417}
   m_Layer: 3
   m_Name: Main Camera
@@ -7156,14 +7164,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9131326606442676964
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616933475229666417}
-  m_Enabled: 1
 --- !u!114 &4583840034765390417
 MonoBehaviour:
   m_ObjectHideFlags: 0

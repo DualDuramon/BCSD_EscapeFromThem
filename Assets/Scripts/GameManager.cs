@@ -80,7 +80,6 @@ public class GameManager : MonoBehaviour
         }
         else if(nowStageIndex == SceneManager.sceneCountInBuildSettings - 1)    //score scene일 경우
         {
-            Debug.Log("야호");
             ClearCurrentSaveData();
             SceneManager.LoadSceneAsync(nowStageIndex);
             return;
@@ -104,6 +103,7 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentSaveData.totalZombieKills += zombieKills;
+        zombieKills = 0;
         SaveNowPlayerStatus();
         asyncLoad.allowSceneActivation = true;
 

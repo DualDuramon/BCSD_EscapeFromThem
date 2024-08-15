@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,6 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private float nowHp;                   //현재 체력
     [SerializeField] private float maxHp = 100.0f;          //최대 체력
     [SerializeField] private bool isDead;                   //사망 여부
-    
 
     //공격관련
     [SerializeField] private float attackDamage = 70.0f;        //데미지
@@ -30,9 +30,9 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private float visibleDistance = 5.0f;      //메시 그려지는 최소 거리
     [SerializeField] private float visibleDotValue = -0.766f;   //cos(-140도) = -0.766f
     private SkinnedMeshRenderer meshRenderer;                   //메시 렌더러
-    
 
     //그외
+    private float distanceOfPlayer;                              //플레이어와의 거리의 제곱값
     private Animator myAnim;                                    //애니메이터
     private Collider myCollider;                                //콜라이더
     [SerializeField] private SpawnManager spawnManager;         //스폰 매니저 -> 오브젝트 풀링때문에 자신의 부모가 됨.
@@ -71,6 +71,8 @@ public class ZombieController : MonoBehaviour
         if(!isDead)
         {
             TryWalk();
+            distanceOfPlayer
+                = (transform.position - playerTransform.position).sqrMagnitude;   //플레이어와의 거리 업데이트
             TryAttack();
             HideMyMesh();
         }
@@ -102,7 +104,7 @@ public class ZombieController : MonoBehaviour
 
     private void Attack()   //공격 함수
     {
-        if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange)
+        if (distanceOfPlayer <= attackRange * attackRange)
             transform.LookAt(playerTransform.position);
         else return;
 
@@ -113,6 +115,7 @@ public class ZombieController : MonoBehaviour
         {
             Debug.Log("플레이어 공격");
             hitInfo.transform.GetComponent<PlayerStatus>().DecreaseHp(attackDamage);
+            SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.ZombieAttack);
             myAnim.SetTrigger("Attack");
             nowAttackCoolTime = 0.0f;
             isAttacking = true;
@@ -124,6 +127,8 @@ public class ZombieController : MonoBehaviour
         if (isDead) return;
 
         nowHp -= amount;
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.ZombieHit);
+
         if (nowHp <= 0)
         {
             StartCoroutine(Dead());
@@ -142,6 +147,7 @@ public class ZombieController : MonoBehaviour
 
         GameManager.Instance.zombieKills++;
 
+        SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.ZombieDeath);
         yield return new WaitForSeconds(5.0f);  //5초 대기 후 시체 삭제 및 후보정
         
         spawnManager.ZombieDead(gameObject);
@@ -157,9 +163,8 @@ public class ZombieController : MonoBehaviour
         float dotValue 
             = Vector3.Dot(playerTransform.forward.normalized, 
             (playerTransform.position - transform.position).normalized);
-        float distance = Vector3.Distance(playerTransform.position, transform.position);
-        //Debug.Log(dotValue);
-        if (dotValue < visibleDotValue || distance < visibleDistance)
+ 
+        if (dotValue < visibleDotValue || distanceOfPlayer < visibleDistance * visibleDistance)
         {
             meshRenderer.enabled = true;
         }
