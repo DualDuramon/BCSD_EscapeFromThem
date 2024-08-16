@@ -16,11 +16,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text servedBulletText;
     [SerializeField] private Text HpText;
     [SerializeField] private Text StageIndex;
-    //[SerializeField] private Text zombieKillsText;
+    [SerializeField] private Text zombieKillsText;
     
-    private void Awake()
+    private void Start()
     {
-        
+
     }
 
     public void ShowBonusPanel(bool flag)   //보너스메뉴 활성화 함수
@@ -70,7 +70,6 @@ public class UIManager : MonoBehaviour
         servedBulletText.text = saveData.nowBullet_reserve.ToString();
         HpText.text = Mathf.CeilToInt(saveData.nowHp).ToString();
         StageIndex.text = $"Stage {GameManager.Instance.nowStageIndex}";
-        //zombieKillsText.text = GameManager.Instance.zombieKills.ToString();
     }
 
     public void StageBonust(string type)    //스테이지 보너스 함수 -> 게임매니저 호출
@@ -78,14 +77,5 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.StageBonus(type);
     }
 
-    //타이틀 씬 관련 버튼 함수들
-    public void StartGame() //start 버튼 함수
-    {
-        GameManager.Instance.LoadNextScene();
-    }
-
-    public void QuitGame()  //게임종료 함수
-    {
-        Application.Quit();
-    }
+    
 }

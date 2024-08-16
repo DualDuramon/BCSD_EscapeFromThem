@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreScene : MonoBehaviour
@@ -22,7 +23,6 @@ public class ScoreScene : MonoBehaviour
     void Start()
     {
         CalCulateScore();
-        //StartSceneAnimation();
         myAC.SetTrigger("Start");
     }
 
@@ -62,7 +62,7 @@ public class ScoreScene : MonoBehaviour
 
     public void GotoTitleScene()
     {
-        GameManager.Instance.LoadNextScene();
+        GameManager.Instance.GoToTitleScene();
     }
 
 }
