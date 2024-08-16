@@ -77,5 +77,10 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.StageBonus(type);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     
 }

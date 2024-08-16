@@ -62,4 +62,5 @@ MonoBehaviour:
   - {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   spawnCoolTime: 1
-  maxZombieCount: 5
+  maxZombieCount: 50
+  firstSpawnZombieCount: 0
