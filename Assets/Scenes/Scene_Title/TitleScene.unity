@@ -10149,14 +10149,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6972142623694199668, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
-      propertyPath: saveLoadManager
-      value: 
-      objectReference: {fileID: 1839207361}
-    - target: {fileID: 6972142623694199668, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
-      propertyPath: currentSaveData.nowGrenade
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7085396655679352867, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10202,17 +10194,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
---- !u!114 &1839207361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 514617795638652299, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
-  m_PrefabInstance: {fileID: 1839207359}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad8c6060e8af2947921d65a52569847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1848924494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}

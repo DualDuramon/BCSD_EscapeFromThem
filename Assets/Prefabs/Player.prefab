@@ -6378,7 +6378,7 @@ MonoBehaviour:
   reloadingTime: 2
   nowBullet_mag: 30
   maxBullet_mag: 30
-  nowBullet_reserve: 90
+  nowBullet_reserve: 150
   nowGrenade: 4
   maxGrenade: 5
   throwPower: 7
