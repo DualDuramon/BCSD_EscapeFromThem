@@ -435,7 +435,7 @@ RectTransform:
   m_GameObject: {fileID: 2033713946713275003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1348324742111051098}
@@ -687,9 +687,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 5711255364185996382}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1852,6 +1852,7 @@ MonoBehaviour:
   servedBulletText: {fileID: 6810817201941690723}
   HpText: {fileID: 3400544877325688598}
   StageIndex: {fileID: 1128549913861491063}
+  zombieKillsText: {fileID: 0}
 --- !u!1 &4336566368583111696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2382,7 @@ RectTransform:
   m_GameObject: {fileID: 5890954438703405755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1174929469169314512}
@@ -2886,7 +2887,7 @@ RectTransform:
   m_GameObject: {fileID: 6861389283591447526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2447285754482253175}
@@ -3233,7 +3234,7 @@ RectTransform:
   m_GameObject: {fileID: 7528372742414835694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2935939389242033484}

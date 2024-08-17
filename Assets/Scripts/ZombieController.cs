@@ -113,7 +113,7 @@ public class ZombieController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, attackRange, playerMask))
         {
-            Debug.Log("플레이어 공격");
+            //Debug.Log("플레이어 공격");
             hitInfo.transform.GetComponent<PlayerStatus>().DecreaseHp(attackDamage);
             SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.ZombieAttack);
             myAnim.SetTrigger("Attack");

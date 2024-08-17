@@ -48,10 +48,11 @@ MonoBehaviour:
   nowStageIndex: 0
   player: {fileID: 0}
   currentSaveData:
+    nowStageIndex: 0
     nowHp: 150
     nowBullet_mag: 30
     nowBullet_reserve: 90
-    nowGrenade: 2
+    nowGrenade: 1
     nowWalkSpeed: 5
     totalZombieKills: 0
   zombieKills: 0

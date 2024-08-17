@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreScene : MonoBehaviour
@@ -51,7 +50,6 @@ public class ScoreScene : MonoBehaviour
         totalScore += buffer;
 
         //좀비 킬 점수 계산
-        //buffer = GameManager.Instance.CurrentSaveData.totalZombieKills * killPoint_Per_One;
         buffer = GameManager.Instance.CurrentSaveData.totalZombieKills;
         killScoreTxt.text = $"{buffer} Kills";
         totalScore += buffer;

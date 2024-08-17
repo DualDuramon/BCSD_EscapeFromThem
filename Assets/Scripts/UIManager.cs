@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -75,6 +74,11 @@ public class UIManager : MonoBehaviour
     public void StageBonust(string type)    //스테이지 보너스 함수 -> 게임매니저 호출
     {
         GameManager.Instance.StageBonus(type);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     

@@ -33,12 +33,10 @@ public class SaveLoad : MonoBehaviour
         {
             string loadJson = File.ReadAllText(SAVE_DATA_DIRECTORY + SAVE_FILENAME);
             
-            Debug.Log("세이브 파일 로드 완료");
             return loadJson;
         }
         else
         {
-            Debug.Log("세이브 파일 없음");
             return "";
         }
     }
