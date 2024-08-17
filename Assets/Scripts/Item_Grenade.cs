@@ -37,7 +37,7 @@ public class Item_Grenade : MonoBehaviour
                 continue;
             } 
 
-            Debug.Log("수류탄 감지 : " + hitData.transform.name);
+            //Debug.Log("수류탄 감지 : " + hitData.transform.name);
             switch (hitData.transform.tag)
             {
                 case "Player":

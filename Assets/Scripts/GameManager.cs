@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
         }
         SceneManager.sceneLoaded += OnSceneLoaded;  //씬 로드시 필요한 함수들 실행
 
-        //saveLoadManager.LoadData();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
@@ -132,25 +131,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    /*
-    public void LoadNextSceneFromTitle()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(++nowStageIndex);
-    }
-    */
-
     private void SaveNowPlayerStatus()  //플레이어 스테이터스 임시 저장 함수
     {
         player.GetComponent<PlayerStatus>().SaveMyStatus(ref currentSaveData);
         currentSaveData.nowStageIndex = nowStageIndex;
     }
-
-    /*
-    public void LoadPlayerStatus()      //임시 플레이어 스테이터스 데이터 로드 함수
-    {
-        player.GetComponent<PlayerController>().ResetProperties();
-    }
-    */
 
     private void FindObjectsOfThisMap()     //맵 상에 존재하는 필요한 오브젝트들 찾기 함수
     {

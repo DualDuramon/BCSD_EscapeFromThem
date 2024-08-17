@@ -75,7 +75,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 walkVec = (-1) * xVec * getAxisX + zVec * getAxisZ;
 
-        //transform.Translate(walkVec.normalized * myStatus.walkSpeed * Time.deltaTime);
         myRigid.MovePosition(transform.position + walkVec.normalized * myStatus.walkSpeed * Time.deltaTime);
     }
 
@@ -154,7 +153,7 @@ public class PlayerController : MonoBehaviour
         myStatus.nowBullet_mag = 0;
         myAnim.SetFloat("ReloadSpeed", 0.5f / myStatus.reloadingTime);
         myAnim.SetInteger("Status_stg44", 3);
-        Debug.Log("재장전 시작");
+        //Debug.Log("재장전 시작");
         
         yield return new WaitForSeconds(myStatus.reloadingTime);
 
@@ -162,7 +161,7 @@ public class PlayerController : MonoBehaviour
         myAnim.SetInteger("Status_stg44", 2);
         myStatus.isReloading = false;
         SoundManager.Instance.PlaySFX(SoundManager.SFXPlayerType.PlayerReload);
-        Debug.Log("재장전 완료");
+        //Debug.Log("재장전 완료");
     }
 
     public void Dead()  //죽음 처리 함수
