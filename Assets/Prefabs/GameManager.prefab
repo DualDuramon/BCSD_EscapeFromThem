@@ -51,8 +51,8 @@ MonoBehaviour:
     nowStageIndex: 0
     nowHp: 150
     nowBullet_mag: 30
-    nowBullet_reserve: 90
-    nowGrenade: 1
+    nowBullet_reserve: 150
+    nowGrenade: 2
     nowWalkSpeed: 5
     totalZombieKills: 0
   zombieKills: 0
