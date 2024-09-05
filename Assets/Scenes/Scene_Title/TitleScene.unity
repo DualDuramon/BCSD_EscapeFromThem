@@ -10834,8 +10834,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1.05
   m_Text: "\uC870\uC900 : Mouse\n\uC0AC\uACA9 : Left Click\n\uC218\uB958\uD0C4 :
-    Right Click\n\uC774\uB3D9 : a,s,d,f\n\uCE74\uBA54\uB77C \uD68C\uC804 : \u2190,
-    \u2192"
+    Right Click\n\uC774\uB3D9 : a,s,d,f\n\uCE74\uBA54\uB77C \uD68C\uC804 : q, r"
 --- !u!222 &2142663580
 CanvasRenderer:
   m_ObjectHideFlags: 0
