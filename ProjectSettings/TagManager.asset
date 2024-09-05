@@ -3,19 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
+  - wehrmacht_b
+  - Zombie
+  - Barricade
+  - EscapeZone
+  - ZombieSpawn
+  - Canvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessingVolume
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Creature
+  - Ground
+  - CityObstacle
+  - Point
   - 
   - 
   - 
