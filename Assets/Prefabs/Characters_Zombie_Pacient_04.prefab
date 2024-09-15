@@ -372,10 +372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79824a27f60f89848bfb517b099ae6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowHp: 100
-  maxHp: 100
+  nowHp: 70
+  maxHp: 70
   isDead: 0
-  attackDamage: 70
+  attackDamage: 25
   attackRange: 1.5
   attackCoolTime: 2
   nowAttackCoolTime: 0
@@ -387,8 +387,6 @@ MonoBehaviour:
     m_Bits: 64
   visibleDistance: 5
   visibleDotValue: -0.766
-  maxDistance: 10
-  grwlingSource: {fileID: 0}
   spawnManager: {fileID: 4615203863041312548, guid: e35b9ffe909b7f6469de509bc66ba997, type: 3}
 --- !u!65 &9015848250583262894
 BoxCollider:

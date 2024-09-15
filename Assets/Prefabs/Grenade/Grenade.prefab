@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c79a7a775eab54468c0483528905bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 120
+  Damage: 70
   explodeRange: 2.2
   explodeParticle: {fileID: 787463116977425366, guid: ae5117c5f7fa85049ab17a7302b3c666, type: 3}
   targetMask:

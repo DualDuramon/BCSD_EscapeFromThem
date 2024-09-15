@@ -6369,8 +6369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  nowHp: 150
-  maxHp: 150
+  nowHp: 100
+  maxHp: 100
   isDead: 0
   isReloading: 0
   nowGunCoolTime: 0
@@ -7177,6 +7177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerPos: {fileID: 7638393026690809857}
+  rotateSpeed: 2
 --- !u!1 &8807074880897028601
 GameObject:
   m_ObjectHideFlags: 0
