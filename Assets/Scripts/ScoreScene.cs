@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Collections;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class ScoreScene : MonoBehaviour
 {
+    //UI 관련
     [SerializeField] private Animator myAC;
     [SerializeField] private Text heartScoreTxt;
     [SerializeField] private Text bulletScoreTxt;
@@ -12,12 +16,19 @@ public class ScoreScene : MonoBehaviour
     [SerializeField] private Text killScoreTxt;
     [SerializeField] private Text totalScoreTxt;
 
+    [SerializeField] private GameObject scoreInputPanel;
+    [SerializeField] private InputField nameInputField;
+    [SerializeField] private Button submitButton;
+
+    //점수계산 관련
     [SerializeField] private int heartScore_Per_One;
     [SerializeField] private int bulletScore_Per_One;
     [SerializeField] private int grenadeScore_Per_One;
     [SerializeField] private int killPoint_Per_One;
     private int totalScore = 0;
 
+    //랭킹 데이터 관련
+    [SerializeField] private RankingManager rankManager;
     
     void Start()
     {
@@ -60,7 +71,18 @@ public class ScoreScene : MonoBehaviour
 
     public void GotoTitleScene()
     {
-        GameManager.Instance.GoToTitleScene();
+        if(GameManager.Instance.minScore < totalScore)
+        {
+            scoreInputPanel.SetActive(true);
+        }
+        else
+        {
+            GameManager.Instance.GoToTitleScene();
+        }
     }
 
+    public void RankFileUpdate()
+    {
+        rankManager.RankingFileUpdate(nameInputField, totalScore);
+    }
 }

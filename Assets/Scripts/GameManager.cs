@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     //그외
     public bool isPause = false;
     public SaveLoad saveLoadManager;
+    public int minScore = 999999;
 
     private void Awake()
     {
@@ -71,11 +72,11 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()  //다음 씬 로딩 함수
     {
-        if (nowStageIndex == 0) //타이틀 씬에서 호출할 경우
+        if(nowStageIndex == 0)  //타이틀 신에서 호출할 경우
         {
             ClearCurrentSaveData();
-            SceneManager.LoadSceneAsync(++nowStageIndex);
-            SoundManager.Instance.PlayBGM(nowStageIndex);
+            SoundManager.Instance.PlayBGM(++nowStageIndex);
+            SceneManager.LoadScene(nowStageIndex);
         }
         else if(nowStageIndex < SceneManager.sceneCountInBuildSettings - 2) //게임 스테이지에서 호출할 경우
         {

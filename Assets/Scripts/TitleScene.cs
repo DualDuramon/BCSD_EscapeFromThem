@@ -20,7 +20,7 @@ public class TitleScene : MonoBehaviour
     private void Start()
     {
         saveData1 = JsonUtility.FromJson<StatusSaveData>(GameManager.Instance.saveLoadManager.LoadSaveData());
-        DescribeSaveDataTexts();
+        //DescribeSaveDataTexts();
     }
 
     public void DescribeSaveDataTexts()    //Load 패널 텍스트 설정 함수

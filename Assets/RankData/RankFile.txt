@@ -1,0 +1,1 @@
+{"dataList":[{"name":"MomDra","score":18730},{"name":"DualDura","score":17800},{"name":"daaa2112","score":17800},{"name":"112212","score":17800},{"name":"성제님화이팅","score":17665},{"name":"ssskw2112","score":17445},{"name":"aas212","score":12350},{"name":"NoName","score":0},{"name":"NoName","score":0},{"name":"NoName","score":0}]}
