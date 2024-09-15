@@ -706,10 +706,10 @@ MonoBehaviour:
   scoreInputPanel: {fileID: 1458359033}
   nameInputField: {fileID: 477449366}
   submitButton: {fileID: 1562570279}
-  heartScore_Per_One: 100
-  bulletScore_Per_One: 15
-  grenadeScore_Per_One: 50
-  killPoint_Per_One: 20
+  heartScore_Per_One: 20
+  bulletScore_Per_One: 20
+  grenadeScore_Per_One: 900
+  killPoint_Per_One: 80
   rankManager: {fileID: 870528771}
 --- !u!95 &295530700
 Animator:

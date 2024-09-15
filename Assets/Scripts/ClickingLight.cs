@@ -14,7 +14,7 @@ public class ClickingLight : MonoBehaviour
         Fire
     }
 
-    [SerializeField] private Light light;
+    [SerializeField] private Light myLight;
     [SerializeField] private float timer = 0;
     [SerializeField] private float RandomRange = 0.0f;
     [SerializeField] private EffectType myEffect;
@@ -22,7 +22,7 @@ public class ClickingLight : MonoBehaviour
 
     private void Awake()
     {
-        light = GetComponent<Light>();
+        myLight = GetComponent<Light>();
         nowTimer = 0.0f;
     }
 
@@ -41,14 +41,11 @@ public class ClickingLight : MonoBehaviour
         switch (myEffect)
         {
             case EffectType.Clicking:
-                light.enabled = !light.enabled;
+                myLight.enabled = !myLight.enabled;
                 break;
 
             case EffectType.Fire:
-                light.intensity = Random.Range(0.0f, RandomRange);
-                
-                //light.color = new Color(255, Random.Range(134.0f, 176.0f), 0);
-                 
+                myLight.intensity = Random.Range(0.0f, RandomRange);                 
                 break;
         }
     }

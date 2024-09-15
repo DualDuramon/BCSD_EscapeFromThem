@@ -32,7 +32,7 @@ public class ZombieController : MonoBehaviour
     private SkinnedMeshRenderer meshRenderer;                   //메시 렌더러
 
     //그외
-    private float distanceOfPlayer;                              //플레이어와의 거리의 제곱값
+    private float distanceOfPlayer;                             //플레이어와의 거리의 제곱값
     private Animator myAnim;                                    //애니메이터
     private Collider myCollider;                                //콜라이더
     [SerializeField] private SpawnManager spawnManager;         //스폰 매니저 -> 오브젝트 풀링때문에 자신의 부모가 됨.
