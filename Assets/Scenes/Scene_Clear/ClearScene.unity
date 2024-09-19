@@ -706,7 +706,7 @@ MonoBehaviour:
   scoreInputPanel: {fileID: 1458359033}
   nameInputField: {fileID: 477449366}
   submitButton: {fileID: 1562570279}
-  heartScore_Per_One: 20
+  heartScore_Per_One: 200
   bulletScore_Per_One: 20
   grenadeScore_Per_One: 900
   killPoint_Per_One: 80
@@ -1774,7 +1774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You Survied !
+  m_Text: You Survived !
 --- !u!222 &935735179
 CanvasRenderer:
   m_ObjectHideFlags: 0

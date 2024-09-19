@@ -166,9 +166,9 @@ public class PlayerController : MonoBehaviour
 
     public void Dead()  //죽음 처리 함수
     {
-        if(currentCoroutine != null)
+        if (currentCoroutine != null)
             StopCoroutine(currentCoroutine);
-        
+
         myCol.enabled = false;
         myAnim.SetInteger("Status_stg44", 4);
         myAnim.SetInteger("Status_walk", 0);
@@ -177,8 +177,11 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.ActiveRetryButton();
     }
 
-    public void ResetProperties()
+    public void ResetProperties()   //프로퍼티, 애니메이션, 스탯 초기화 함수
     {
+        if (currentCoroutine != null)
+            StopCoroutine(currentCoroutine);
+
         myAnim.SetInteger("Status_stg44", 2);
         myAnim.SetInteger("Status_walk", 0);
         myCol.enabled = true;

@@ -3,8 +3,6 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Palmmedia.ReportGenerator.Core.Common;
-using System;
 
 public class RankingManager : MonoBehaviour
 {
