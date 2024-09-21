@@ -1736,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.115217544
       objectReference: {fileID: 0}
+    - target: {fileID: 975814370202740315, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1760161374653085836, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1800,9 +1804,25 @@ PrefabInstance:
       propertyPath: m_Extents.z
       value: 1.9763385
       objectReference: {fileID: 0}
+    - target: {fileID: 3228082306402046244, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490801170719991972, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778105970571558134, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
       propertyPath: m_Name
       value: Map_City_Big
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801566612869995263, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824086431624507241, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6605215271568769574, guid: c759ff7c0eb276047b79fe2e9a146689, type: 3}
       propertyPath: m_Size.z
