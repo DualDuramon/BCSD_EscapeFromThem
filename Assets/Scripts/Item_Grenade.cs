@@ -30,7 +30,13 @@ public class Item_Grenade : MonoBehaviour
         foreach (RaycastHit hitData in raycasts)
         {
             RaycastHit obstCast;
-            Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast, explodeRange * 1.2f, targetMask);
+            //Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast, explodeRange * 1.2f, targetMask)
+            if (!Physics.Raycast(transform.position, hitData.transform.position - transform.position, out obstCast, explodeRange * 1.2f, targetMask))
+            {
+                Debug.Log($"obstCast failed : {hitData.transform.name}");
+                continue;
+            };
+            
             if (obstCast.transform.tag != hitData.transform.tag)
             {
                 continue;

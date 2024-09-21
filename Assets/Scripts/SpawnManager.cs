@@ -98,9 +98,9 @@ public class SpawnManager : MonoBehaviour
             return;
         }
         int select = Random.Range(0, zombieSpawnPoints.Length);
-        zombie.SetActive(true);
         zombie.transform.position 
             = zombieSpawnPoints[select].position + new Vector3(Random.Range(0, 0.5f), 0, Random.Range(0, 0.5f));
+        zombie.SetActive(true);
         nowZombieCount++;
         nowSpawnCoolTime = 0.0f;
     }

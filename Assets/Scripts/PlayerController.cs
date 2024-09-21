@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private Camera myCamera;                            //카메라
 
     private Coroutine currentCoroutine;
-
     private void Awake()
     {
         myCamera = GetComponentInChildren<Camera>();
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         myCol = GetComponent<Collider>();
         myStatus = GetComponent<PlayerStatus>();
         myAnim = GetComponentInChildren<Animator>();
+
     }
 
     private void Update()
@@ -69,13 +70,14 @@ public class PlayerController : MonoBehaviour
         } 
 
         Vector3 tempVec = (transform.position - myCamera.transform.position);
-
         Vector3 xVec = new Vector3(-tempVec.z, 0, tempVec.x);
         Vector3 zVec = new Vector3(tempVec.x, 0, tempVec.z);
 
         Vector3 walkVec = (-1) * xVec * getAxisX + zVec * getAxisZ;
 
-        myRigid.MovePosition(transform.position + walkVec.normalized * myStatus.walkSpeed * Time.deltaTime);
+        
+        if (!Physics.Raycast(transform.position + Vector3.up, walkVec.normalized, 0.25f))
+            myRigid.MovePosition(transform.position + walkVec.normalized * myStatus.walkSpeed * Time.deltaTime);
     }
 
     private void LookMouseCursor()  //플레이어의 마우스 향하기 함수

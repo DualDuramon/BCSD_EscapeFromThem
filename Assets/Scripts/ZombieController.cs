@@ -62,6 +62,7 @@ public class ZombieController : MonoBehaviour
         myNavAgent.enabled = true;
         myCollider.enabled = true;
         meshRenderer.enabled = true;
+        isAttacking = false;
         myNavAgent.SetDestination(playerTransform.position);
         myNavAgent.speed = walkSpeed;
     }

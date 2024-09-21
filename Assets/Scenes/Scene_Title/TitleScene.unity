@@ -13781,7 +13781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: -20}
+  m_AnchoredPosition: {x: 100, y: -15}
   m_SizeDelta: {x: 200, y: 180}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2142663579
@@ -13806,19 +13806,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 19
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.05
+    m_LineSpacing: 1.1
   m_Text: "\uC870\uC900 : Mouse\n\uC0AC\uACA9 : Left Click\n\uC218\uB958\uD0C4 :
-    Right Click\n\uC774\uB3D9 : a,s,d,f\n\uCE74\uBA54\uB77C \uD68C\uC804 : q, r"
+    Right Click\n\uC774\uB3D9 : W,A,S,D\n\uC7AC\uC7A5\uC804 : R\n\uCE74\uBA54\uB77C
+    \uD68C\uC804 : Q,E"
 --- !u!222 &2142663580
 CanvasRenderer:
   m_ObjectHideFlags: 0
