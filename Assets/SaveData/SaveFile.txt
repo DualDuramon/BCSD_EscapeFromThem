@@ -1,1 +1,1 @@
-{"nowStageIndex":2,"nowHp":50.0,"nowBullet_mag":30,"nowBullet_reserve":290,"nowGrenade":1,"nowWalkSpeed":5.0,"totalZombieKills":14}
+{"nowStageIndex":2,"nowHp":100.0,"nowBullet_mag":30,"nowBullet_reserve":233,"nowGrenade":4,"nowWalkSpeed":5.0,"totalZombieKills":43}

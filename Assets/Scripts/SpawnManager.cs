@@ -66,6 +66,7 @@ public class SpawnManager : MonoBehaviour
         player.transform.position = playerSpawnPoint.position;
         player.transform.rotation = playerSpawnPoint.rotation;
         GameManager.Instance.ResetStageUIs();
+        GameManager.Instance.zombieKills = 0;
     }
 
     private void InstantiateZombies()   //좀비 오브젝트 풀링 함수
