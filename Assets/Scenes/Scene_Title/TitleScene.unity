@@ -12541,6 +12541,10 @@ PrefabInstance:
       propertyPath: bonusGrenade
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6972142623694199668, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
+      propertyPath: speedIncreasement
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7085396655679352867, guid: f44eacfd41a414145b571bc87e5144b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

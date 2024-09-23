@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     //보너스 지급 관련
     [SerializeField] private int bonusGrenade = 1;
     [SerializeField] private int bonusAmmo = 90;
+    [SerializeField] private float speedIncreasement = 1.0f;
 
     //캔버스 관련
     [SerializeField] private UIManager myUI;                       //캔버스 오브젝트
@@ -158,7 +159,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("보너스 타입이 잘못되었습니다. -> 총알 추가 지급");
                 break;
         }
-        player.GetComponent<PlayerStatus>().Increase_WalkSpeed(1.0f);
+        player.GetComponent<PlayerStatus>().Increase_WalkSpeed(speedIncreasement);
         isPause = false;
         Time.timeScale = 1.0f;
     }
