@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private PlayerStatus myStatus;                      //플레이어 스테이터스
     private Camera myCamera;                            //카메라
 
+    [SerializeField] private LayerMask pointLayers;    //마우스 포인터가 감지할 레이어들
     private Coroutine currentCoroutine;
     private void Awake()
     {
@@ -91,7 +93,7 @@ public class PlayerController : MonoBehaviour
         Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
 
-        if (Physics.Raycast(ray, out rayHit))
+        if (Physics.Raycast(ray, out rayHit, float.MaxValue, pointLayers))
         {
             if (rayHit.transform.tag == "Zombie")
             {

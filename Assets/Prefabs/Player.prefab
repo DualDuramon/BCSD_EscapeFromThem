@@ -6337,7 +6337,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &2601041625289086827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6356,6 +6356,9 @@ MonoBehaviour:
   muzzleFlash: {fileID: 7054263344591252965}
   grenadePrefab: {fileID: 4165918620133395504, guid: ce37f6028e714f94ea535e1a08536324, type: 3}
   grenadePos: {fileID: 2120917551512492971}
+  pointLayers:
+    serializedVersion: 2
+    m_Bits: 1531
 --- !u!114 &2340959012908270657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6515,7 +6518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688934304457637297}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6530,7 +6533,7 @@ Transform:
   - {fileID: 2120917551512492971}
   - {fileID: 9160097486523539097}
   m_Father: {fileID: 7638393026690809857}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7051817590114569603
 Animator:
   serializedVersion: 5
@@ -7259,7 +7262,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 511
+    m_Bits: 1535
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
