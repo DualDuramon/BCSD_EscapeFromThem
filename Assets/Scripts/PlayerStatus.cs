@@ -99,6 +99,11 @@ public class PlayerStatus : MonoBehaviour
         myUI.UpdateBulletData(nowBullet_mag, nowBullet_reserve);
     }
 
+    public void Increase_WalkSpeed(float amount)  //이동속도 증가 함수
+    {
+        walkSpeed += amount;
+    }
+
     public void Decrease_nowBullet()   //총알 감소 함수 -> 총 발사할때 사용
     {
         nowBullet_mag--;

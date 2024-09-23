@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("보너스 타입이 잘못되었습니다. -> 총알 추가 지급");
                 break;
         }
-
+        player.GetComponent<PlayerStatus>().Increase_WalkSpeed(1.0f);
         isPause = false;
         Time.timeScale = 1.0f;
     }

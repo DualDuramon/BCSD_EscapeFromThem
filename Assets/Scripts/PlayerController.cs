@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 walkVec = (-1) * xVec * getAxisX + zVec * getAxisZ;
 
-        
+
         if (!Physics.Raycast(transform.position + Vector3.up, walkVec.normalized, 0.25f))
             myRigid.MovePosition(transform.position + walkVec.normalized * myStatus.walkSpeed * Time.deltaTime);
     }
